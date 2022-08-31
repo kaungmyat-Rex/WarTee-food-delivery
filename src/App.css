@@ -1,38 +1,80 @@
 .App {
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+/* 
+Main Nav section--------------------------- */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-nav {
+  width: 100%;
+  height: 80px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  background-color: #f4eee1;
+}
+
+.main-logo {
+  display: flex;
+  flex: 3;
+
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main-logo h5 {
+  color: #3d1d15;
+  font-size: 1.5rem;
+  margin-left: 90px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-menu {
+  display: flex;
+  flex: 5;
+
+  align-items: center;
+}
+
+.main-menu-ul {
+  display: flex;
+  list-style: none;
+}
+
+.main-menu-ul li {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  margin-left: 50px;
+  color: #3d1d15;
+  cursor: pointer;
+}
+.main-menu-ul li:hover {
+  color: #d85d44;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+.main-icon {
+  display: flex;
+  flex: 4;
+  align-items: center;
+}
+
+.main-icon-ul {
+  display: flex;
+  list-style: none;
+}
+
+.search-icon,
+.shop-icon {
+  font-size: 25px;
+  color: #3d1d15;
+  font-weight: 100;
+  margin-left: 40px;
+}
+
+.search-icon {
+  margin-left: 130px;
+}
+.language {
+  display: flex;
+  margin-left: 40px;
 }
