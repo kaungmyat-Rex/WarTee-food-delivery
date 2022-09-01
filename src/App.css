@@ -4,7 +4,14 @@
   box-sizing: border-box;
 }
 /* 
-Main Nav section--------------------------- */
+
+
+
+Main Nav section-----------
+
+
+
+---------------- */
 
 .main-nav {
   width: 100%;
@@ -12,19 +19,33 @@ Main Nav section--------------------------- */
   display: flex;
   flex-direction: row;
   background-color: #f4eee1;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
 .main-logo {
   display: flex;
   flex: 3;
-
   align-items: center;
 }
 
-.main-logo h5 {
+.logo-image {
+  width: 60px;
+  margin-left: 60px;
+}
+
+.logo-text {
+  margin-left: 5px;
   color: #3d1d15;
-  font-size: 1.5rem;
-  margin-left: 90px;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+
+.logo-text-minor {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  position: absolute;
+  color: #5a2a1f;
 }
 
 .main-menu {
@@ -51,6 +72,7 @@ Main Nav section--------------------------- */
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 7px;
+  transition: 400ms;
 }
 .main-icon {
   display: flex;
@@ -69,12 +91,302 @@ Main Nav section--------------------------- */
   color: #3d1d15;
   font-weight: 100;
   margin-left: 40px;
+  cursor: pointer;
 }
 
 .search-icon {
   margin-left: 130px;
 }
+
+.search-icon:hover,
+.shop-icon:hover {
+  color: #d85d44;
+}
+
 .language {
   display: flex;
   margin-left: 40px;
+}
+
+.english {
+  border: 2px solid #3d1d15;
+  border-radius: 5px;
+}
+
+.english span {
+  padding: 5px;
+}
+
+.burmese {
+  border: 2px solid #f4eee1;
+  margin-left: 5px;
+}
+
+.burmese span {
+  color: #8f8673;
+}
+
+/*----------
+
+
+
+
+the end of nav bar 
+
+
+
+
+
+
+-------- */
+
+/* ----------
+
+
+
+the start of main body-----
+
+
+
+
+------ */
+.swiper {
+  width: 100%;
+  height: 550px;
+}
+
+.swiper-slide {
+  display: flex;
+  width: 900px;
+  height: 500px;
+
+  align-items: center;
+}
+
+:root {
+  --swiper-navigation-color: white !important;
+  --swiper-theme-color: white !important;
+}
+
+.main-body {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(110, 58, 13);
+  background: linear-gradient(
+    188deg,
+    rgba(110, 58, 13, 1) 2%,
+    rgba(180, 116, 49, 1) 47%,
+    rgba(255, 178, 89, 1) 98%
+  );
+}
+
+.burgur {
+  width: 550px;
+}
+
+.bd-section-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  margin-right: 100px;
+}
+
+.text-itemName {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 0px;
+}
+
+.text-itemPrice {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+}
+
+/* CSS */
+.button-3 {
+  z-index: 2;
+  appearance: none;
+  background-color: #d85d44;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.button-3:hover {
+  background-color: #3d1d15;
+}
+
+/* ---------main-body two--------------- */
+.main-body-two {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(34, 59, 45);
+  background: linear-gradient(
+    188deg,
+    rgba(34, 59, 45, 1) 10%,
+    rgba(45, 97, 67, 1) 48%,
+    rgba(88, 152, 115, 1) 90%
+  );
+}
+
+.bubble {
+  width: 230px;
+}
+
+.bd-section-text-two {
+  display: flex;
+  flex-direction: column;
+  margin-left: 120px;
+}
+
+.text-itemName-two {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 0px;
+}
+
+.text-itemPrice-two {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+}
+
+/* CSS */
+.button-3-two {
+  z-index: 2;
+  appearance: none;
+  background-color: #ffb259;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.button-3-two:hover {
+  background-color: #3d1d15;
+}
+
+/* ---------main-body three--------------- */
+.main-body-three {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(79, 36, 27);
+  background: linear-gradient(
+    188deg,
+    rgba(79, 36, 27, 1) 10%,
+    rgba(153, 72, 56, 1) 50%,
+    rgba(216, 93, 68, 1) 90%
+  );
+}
+
+.pizza {
+  width: 530px;
+}
+
+.bd-section-text-three {
+  display: flex;
+  flex-direction: column;
+  margin-left: 120px;
+  margin-right: 20px;
+}
+
+.text-itemName-three {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 0px;
+}
+
+.text-itemPrice-three {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+}
+
+/* CSS */
+.button-3-three {
+  z-index: 2;
+  appearance: none;
+  background-color: #589873;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.button-3-three:hover {
+  background-color: #3d1d15;
 }

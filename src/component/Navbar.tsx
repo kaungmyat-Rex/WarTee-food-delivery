@@ -1,12 +1,17 @@
 import React from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { BiShoppingBag } from "react-icons/bi";
+import logo from "../img/logo.png";
 
 const Navbar = () => {
   return (
     <div className="main-nav">
       <div className="main-logo">
-        <h5>WarTee</h5>
+        <img className="logo-image" src={logo} alt="logo" />
+        <h3 className="logo-text">
+          WAR TEE <br />
+          <span className="logo-text-minor">fast food delivery</span>
+        </h3>
       </div>
       <div className="main-menu">
         <ul className="main-menu-ul">
@@ -24,11 +29,14 @@ const Navbar = () => {
           <li>
             <BiShoppingBag className="shop-icon" />
           </li>
-
           <li>
             <div className="language">
-              <div className="english">En</div>
-              <div className="burmese">Bm</div>
+              <div className="english">
+                <span>En</span>
+              </div>
+              <div className="burmese">
+                <span>Bm</span>
+              </div>
             </div>
           </li>
         </ul>
