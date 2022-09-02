@@ -184,8 +184,23 @@ the start of main body-----
   );
 }
 
+.bd-section-image {
+  position: relative;
+  width: 550px;
+  z-index: 1;
+}
 .burgur {
   width: 550px;
+}
+
+.bgImage {
+  width: 550px;
+  height: 550px;
+
+  position: absolute;
+  z-index: -1;
+  left: -60px;
+  top: -130px;
 }
 
 .bd-section-text {
@@ -259,8 +274,23 @@ the start of main body-----
   );
 }
 
+.bd-section-image-two {
+  position: relative;
+  width: 230px;
+  z-index: 1;
+}
+
 .bubble {
   width: 230px;
+}
+
+.bgImage2 {
+  width: 500px;
+
+  position: absolute;
+  z-index: -1;
+  left: -130px;
+  top: -30px;
 }
 
 .bd-section-text-two {
@@ -332,9 +362,22 @@ the start of main body-----
     rgba(216, 93, 68, 1) 90%
   );
 }
+.bd-section-image-three {
+  position: relative;
+  width: 500px;
+  z-index: 1;
+}
 
 .pizza {
+  width: 500px;
+}
+.bgImage3 {
   width: 530px;
+
+  position: absolute;
+  z-index: -1;
+  left: 80px;
+  top: -80px;
 }
 
 .bd-section-text-three {
@@ -389,4 +432,137 @@ the start of main body-----
 
 .button-3-three:hover {
   background-color: #3d1d15;
+}
+
+/*---------
+
+
+ 
+ section feature product 
+ 
+
+
+ ----------*/
+
+.section-feature-product {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 300px;
+}
+
+.section-feature-product-boder {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-feature-title {
+  display: flex;
+  justify-content: center;
+}
+
+.feature-title {
+  color: #3d1d15;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 23px;
+  padding: 20px;
+}
+
+.section-product-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-main {
+  width: 240px;
+  height: 295px;
+  background: rgb(249, 247, 245);
+  background: linear-gradient(
+    357deg,
+    rgba(249, 247, 245, 1) 12%,
+    rgba(244, 238, 225, 1) 100%
+  );
+  margin-left: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 40px 0px 0px 40px;
+}
+
+.logoimg {
+  width: 40px;
+  left: 20px;
+  top: 20px;
+  position: absolute;
+  opacity: 0.3;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.product-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.pd-name {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.pd-price {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 20px;
+  color: #d85d44;
+  margin-top: 5px;
+}
+
+.pd-add {
+  border-radius: 50px;
+  background-color: #e8e4dd;
+  margin-left: 50px;
+  margin-top: 50px;
+  cursor: pointer;
+  color: #3d1d15;
+  transition: 200ms;
+}
+
+.pd-add-icon {
+  font-size: 24px;
+
+  padding: 4px;
+}
+
+.pd-add:hover {
+  background-color: #d85d44;
+  transition: 200ms;
+  color: #f4eee1;
 }
