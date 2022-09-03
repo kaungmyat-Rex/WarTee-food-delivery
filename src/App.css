@@ -450,7 +450,8 @@ the start of main body-----
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 300px;
+  padding-bottom: 100px;
+  padding-top: 50px;
 }
 
 .section-feature-product-boder {
@@ -503,6 +504,8 @@ the start of main body-----
   height: 150px;
   object-fit: contain;
   margin: 40px 0px 0px 40px;
+
+  transition: 300ms;
 }
 
 .logoimg {
@@ -565,4 +568,305 @@ the start of main body-----
   background-color: #d85d44;
   transition: 200ms;
   color: #f4eee1;
+}
+
+.product-img:hover {
+  transform: scale(1.5);
+  transition: 300ms;
+}
+
+/* -----------
+
+
+
+section promo main
+
+
+
+--------- */
+
+.section-promo-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.section-promo-boder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgb(249, 247, 245);
+  background: linear-gradient(
+    357deg,
+    rgba(249, 247, 245, 1) 12%,
+    rgba(244, 238, 225, 1) 100%
+  );
+}
+
+.section-promo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-title {
+  color: #3d1d15;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 23px;
+  padding: 20px;
+}
+
+.section-promo-about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-about-boder {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+
+  padding-bottom: 50px;
+}
+
+.promo-about-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 270px;
+  text-align: center;
+}
+
+.promo-icon-one {
+  font-size: 65px;
+  font-weight: 200;
+  color: #d85d44;
+}
+
+.promo-title-one {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 17px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.promo-bar {
+  width: 30px;
+  height: 4px;
+  background-color: #d85d44;
+  margin: 15px 0px 15px 0px;
+}
+
+.promo-text-one {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 14px;
+  margin: 0;
+}
+
+.promo-about-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 270px;
+  text-align: center;
+}
+
+.promo-icon-two {
+  font-size: 65px;
+  font-weight: 200;
+  color: #d85d44;
+}
+
+.promo-title-two {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 17px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.promo-bar {
+  width: 30px;
+  height: 4px;
+  background-color: #d85d44;
+  margin: 15px 0px 15px 0px;
+}
+
+.promo-text-two {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 14px;
+  margin: 0;
+}
+
+.promo-about-three {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 270px;
+  text-align: center;
+}
+
+.promo-icon-three {
+  font-size: 65px;
+  font-weight: 200;
+  color: #d85d44;
+}
+
+.promo-title-three {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 17px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.promo-bar {
+  width: 30px;
+  height: 4px;
+  background-color: #d85d44;
+  margin: 15px 0px 15px 0px;
+}
+
+.promo-text-three {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 14px;
+  margin: 0;
+}
+
+.promo-about-four {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 270px;
+  text-align: center;
+}
+
+.promo-icon-four {
+  font-size: 65px;
+  font-weight: 200;
+  color: #d85d44;
+}
+
+.promo-title-four {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 17px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.promo-bar {
+  width: 30px;
+  height: 4px;
+  background-color: #d85d44;
+  margin: 15px 0px 15px 0px;
+}
+
+.promo-text-four {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* -------
+
+
+section guide main
+
+
+--------*/
+
+.section-guide-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 200px;
+}
+
+.section-guide-boder {
+  width: 60%;
+
+  position: relative;
+}
+
+.pointer1 {
+  top: 120px;
+  width: 230px;
+  position: absolute;
+}
+.pointer2 {
+  top: 320px;
+  left: 680px;
+  width: 230px;
+  position: absolute;
+}
+.section-guide-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.guide-title-main {
+  color: #3d1d15;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 23px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.guide-title-one {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.guide-title-two {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.guide-title-three {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.guide-title-text {
+  font-family: "Manrope", sans-serif;
+  color: #87655c;
+  font-size: 16px;
+  width: 550px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.guide-bar {
+  width: 30px;
+  height: 3px;
+  background-color: #3d1d15;
+  margin: 20px;
 }
