@@ -15,7 +15,7 @@ Main Nav section-----------
 
 .main-nav {
   width: 100%;
-  height: 80px;
+  height: 60px;
   display: flex;
   flex-direction: row;
   background-color: #f4eee1;
@@ -34,7 +34,7 @@ Main Nav section-----------
 }
 
 .logo-text {
-  margin-left: 5px;
+  margin-left: 15px;
   color: #3d1d15;
   font-family: "Playfair Display", serif;
   font-size: 22px;
@@ -796,7 +796,7 @@ section guide main
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 200px;
+  padding-bottom: 120px;
 }
 
 .section-guide-boder {
@@ -869,4 +869,152 @@ section guide main
   height: 3px;
   background-color: #3d1d15;
   margin: 20px;
+}
+
+/* ----------
+
+
+footer section
+
+
+------------*/
+
+.section-footer-main {
+  position: relative;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(241, 233, 216, 1) 100%
+  );
+}
+
+.section-footer-boder {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-list-main {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+}
+
+.logo-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.logo-list-img {
+  width: 80px;
+}
+
+.logo-list-text {
+  margin: 0px;
+  margin-left: 5px;
+  color: #3d1d15;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+
+.logo-list p {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  position: absolute;
+  color: #5a2a1f;
+  margin-top: 120px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-list h3 {
+  margin: 0px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-family: "Lexend Tera", sans-serif;
+  color: #3d1d15;
+}
+
+.faq-list p {
+  margin: 0px;
+  color: #3d1d15;
+  font-family: "Manrope", sans-serif;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-list h3 {
+  margin: 0px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-family: "Lexend Tera", sans-serif;
+  color: #3d1d15;
+}
+.contact-list p {
+  margin: 0px;
+  color: #3d1d15;
+  font-family: "Manrope", sans-serif;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.developer-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.developer-list h3 {
+  margin: 0px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-family: "Lexend Tera", sans-serif;
+  color: #3d1d15;
+}
+
+.developer-list p {
+  margin: 0px;
+  color: #3d1d15;
+  font-family: "Manrope", sans-serif;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.copy-right-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-left: 970px;
+}
+
+.copy-right-list p {
+  margin: 0px;
+
+  font-family: "Manrope", sans-serif;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cp-facebook,
+.cp-insta {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-top: 7px;
 }

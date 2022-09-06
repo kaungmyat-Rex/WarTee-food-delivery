@@ -19,6 +19,7 @@ import { MdOutlineFastfood } from "react-icons/md";
 import { BiDish } from "react-icons/bi";
 import pointer from "../img/point.png";
 import pointer2 from "../img/pointer2.png";
+import Footer from "../component/Footer";
 
 const Home = () => {
   return (
@@ -195,6 +196,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
