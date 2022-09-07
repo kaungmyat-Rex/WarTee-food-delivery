@@ -48,6 +48,10 @@ Main Nav section-----------
   color: #5a2a1f;
 }
 
+.logo-text-minor-fit {
+  margin-top: -10px;
+}
+
 .main-menu {
   display: flex;
   flex: 5;
@@ -106,11 +110,19 @@ Main Nav section-----------
 .language {
   display: flex;
   margin-left: 40px;
+  cursor: pointer;
 }
 
 .english {
   border: 2px solid #3d1d15;
   border-radius: 5px;
+  transition: 500ms;
+}
+
+.english-hide {
+  border: 2px solid #f4eee1;
+  color: #8f8673;
+  transition: 500ms;
 }
 
 .english span {
@@ -118,12 +130,19 @@ Main Nav section-----------
 }
 
 .burmese {
+  border: 2px solid #3d1d15;
+  border-radius: 5px;
+  transition: 500ms;
+}
+
+.burmese-hide {
   border: 2px solid #f4eee1;
-  margin-left: 5px;
+  color: #8f8673;
+  transition: 500ms;
 }
 
 .burmese span {
-  color: #8f8673;
+  padding: 5px;
 }
 
 /*----------

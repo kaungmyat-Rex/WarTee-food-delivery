@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../component/Navbar";
 import burgur from "../img/burgur.png";
 import bubble from "../img/Bubble_Tea.png";
@@ -20,11 +20,13 @@ import { BiDish } from "react-icons/bi";
 import pointer from "../img/point.png";
 import pointer2 from "../img/pointer2.png";
 import Footer from "../component/Footer";
+import { Burmese } from "../component/Burmese";
 
 const Home = () => {
+  const [language, setLanguage] = useState<boolean>(false);
   return (
     <>
-      <Navbar />
+      <Navbar language={language} setLanguage={setLanguage} />
 
       <Swiper
         cssMode={true}
@@ -89,7 +91,9 @@ const Home = () => {
       <div className="section-feature-product">
         <div className="section-feature-product-boder">
           <div className="section-feature-title">
-            <h4 className="feature-title">FEATURE MENU OF WARTEE?</h4>
+            <h4 className="feature-title">
+              {language ? Burmese[0].title1 : "FEATURE MENU OF WARTEE"}
+            </h4>
           </div>
           <div className="section-product-main">
             <div className="product-list">
@@ -116,7 +120,10 @@ const Home = () => {
       <div className="section-promo-main">
         <div className="section-promo-boder">
           <div className="section-promo-title">
-            <h4 className="promo-title">WHY ORDER FOOD ON WARTEE</h4>
+            <h4 className="promo-title">
+              {" "}
+              {language ? Burmese[0].title2 : "WHY ORDER FOOD ON WARTEE?"}
+            </h4>
           </div>
           <div className="section-promo-about">
             <div className="promo-about-boder">
@@ -162,7 +169,9 @@ const Home = () => {
           <img src={pointer} className="pointer1" alt="" />
           <img src={pointer2} className="pointer2" alt="" />
           <div className="section-guide-list">
-            <h4 className="guide-title-main">HOW IT'S WORK</h4>
+            <h4 className="guide-title-main">
+              {language ? Burmese[0].title3 : "HOW IT'S WORK"}
+            </h4>
 
             <div className="guide-one">
               <p className="guide-title-one">
