@@ -82,6 +82,7 @@ Main Nav section-----------
   display: flex;
   flex: 4;
   align-items: center;
+  position: relative;
 }
 
 .main-icon-ul {
@@ -145,6 +146,50 @@ Main Nav section-----------
   padding: 5px;
 }
 
+.language-info {
+  position: absolute;
+  top: -70px;
+
+  width: 350px;
+  height: 50px;
+  display: flex;
+  background: rgb(255, 137, 113);
+  background: linear-gradient(
+    270deg,
+    rgba(255, 137, 113, 1) 0%,
+    rgba(236, 115, 91, 1) 0%,
+    rgba(229, 107, 83, 1) 0%,
+    rgba(225, 103, 78, 1) 0%,
+    rgba(216, 93, 68, 1) 100%
+  );
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  z-index: 2;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 2px;
+  transition: 500ms;
+}
+
+.language-info-show {
+  position: absolute;
+  top: 70px;
+  transition: 500ms;
+}
+
+.lg-icon {
+  font-size: 25px;
+  margin: 0;
+  color: #f4eee1;
+}
+
+.language-info p {
+  color: #f4eee1;
+  font-family: "Manrope", sans-serif;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 0;
+}
 /*----------
 
 

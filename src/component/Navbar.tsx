@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { BiShoppingBag } from "react-icons/bi";
+import { FaInfoCircle } from "react-icons/fa";
 import logo from "../img/logo.png";
 import { Burmese } from "./Burmese";
 
@@ -9,7 +11,23 @@ interface props {
 }
 
 const Navbar = ({ language, setLanguage }: props) => {
-  console.log(Burmese[0].menuList1);
+  const [infobox, setInfobox] = useState<boolean>(false);
+
+  const backtofalse = (): void => {
+    setInfobox(false);
+  };
+
+  const chageToEng = (): void => {
+    setLanguage(false);
+    setInfobox(true);
+    setTimeout(backtofalse, 3000);
+  };
+
+  const chageToBm = (): void => {
+    setLanguage(true);
+    setInfobox(true);
+    setTimeout(backtofalse, 3000);
+  };
 
   return (
     <div className="main-nav">
@@ -47,19 +65,31 @@ const Navbar = ({ language, setLanguage }: props) => {
             <div className="language">
               <div
                 className={`english ${language ? "english-hide" : ""}`}
-                onClick={() => setLanguage(false)}
+                onClick={() => chageToEng()}
               >
                 <span>En</span>
               </div>
               <div
                 className={`burmese ${language ? "" : "burmese-hide"}`}
-                onClick={() => setLanguage(true)}
+                onClick={() => chageToBm()}
               >
                 <span>Bm</span>
               </div>
             </div>
           </li>
         </ul>
+        <div className={`language-info ${infobox ? "language-info-show" : ""}`}>
+          <FaInfoCircle className="lg-icon" />
+
+          <p>
+            Website language change to{" "}
+            <span
+              style={{ color: "#3d1d15", fontWeight: "900", fontSize: "16px" }}
+            >
+              {language ? "Burmese" : "English"}
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );

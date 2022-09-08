@@ -97,8 +97,8 @@ const Home = () => {
           </div>
           <div className="section-product-main">
             <div className="product-list">
-              {fakeproduct.map((e) => (
-                <div className="product-main">
+              {fakeproduct.map((e, index) => (
+                <div className="product-main" key={index}>
                   <img className="product-img" src={e.productImg} alt="" />
                   <img className="logoimg" src={e.logoImg} alt="" />
                   <div className="product-info">
