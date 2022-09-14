@@ -19,7 +19,7 @@ Main Nav section-----------
   display: flex;
   flex-direction: row;
   background-color: #f4eee1;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
 }
 
 .main-logo {
@@ -1081,4 +1081,157 @@ footer section
   font-size: 20px;
   margin-left: 10px;
   margin-top: 7px;
+}
+
+/* ----------
+
+
+scrool bar 
+
+
+
+---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #d85d44;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3d1d15;
+}
+
+/* --------------------
+
+
+
+
+Menu page start from here 
+
+
+
+
+
+-----------------------*/
+
+.section-menu {
+  width: auto;
+  height: auto;
+}
+
+.menu-title-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-title {
+  color: #3d1d15;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 23px;
+  padding: 20px;
+}
+
+.menu-search-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-search {
+  position: relative;
+}
+
+.search {
+  width: 450px;
+
+  border: none;
+  border-bottom: 2.3px solid #5a2a1f;
+  font-size: 18px;
+  outline: none;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  letter-spacing: 0.5px;
+}
+
+.search:focus {
+  border-bottom: 2.3px solid #d85d44;
+  transition: 300ms;
+}
+
+.search::placeholder {
+  font-family: "Manrope", sans-serif;
+  color: #8f8673;
+}
+
+.search-menu-icon {
+  position: absolute;
+  left: 430px;
+  font-size: 25px;
+  color: #3d1d15;
+  font-weight: 100;
+}
+
+.menu-filter {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.menu-filter-one,
+.menu-filter-two,
+.menu-filter-three,
+.menu-filter-four {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: rgb(249, 247, 245);
+  background: linear-gradient(
+    357deg,
+    rgba(249, 247, 245, 1) 12%,
+    rgba(244, 238, 225, 1) 100%
+  );
+  margin-left: 10px;
+  border-radius: 5px;
+  color: #d85d44;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.menu-filter-one:hover,
+.menu-filter-two:hover,
+.menu-filter-three:hover,
+.menu-filter-four:hover {
+  background: #d85d44;
+  color: #f4eee1;
+  transition: 300ms;
+}
+
+.filter-icon-one,
+.filter-icon-two,
+.filter-icon-three,
+.filter-icon-four {
+  font-size: 20px;
+  padding: 0px 10px 0px 20px;
+}
+
+.filter-name-one,
+.filter-name-two,
+.filter-name-three,
+.filter-name-four {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+
+  padding-right: 20px;
 }

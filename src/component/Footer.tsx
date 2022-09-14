@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="copy-right-list">
-          <p>@CopyRight 2022 to WARTEE</p>
+          <p>@CopyRight 2022 All Right Reserve</p>
           <BsFacebook className="cp-facebook" />
           <BsInstagram className="cp-insta" />
         </div>

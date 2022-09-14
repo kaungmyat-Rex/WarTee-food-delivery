@@ -4,6 +4,7 @@ import { BiShoppingBag } from "react-icons/bi";
 import { FaInfoCircle } from "react-icons/fa";
 import logo from "../img/logo.png";
 import { Burmese } from "./Burmese";
+import { Link } from "react-router-dom";
 
 interface props {
   language: boolean;
@@ -47,8 +48,12 @@ const Navbar = ({ language, setLanguage }: props) => {
       </div>
       <div className="main-menu">
         <ul className="main-menu-ul">
-          <li>{language ? Burmese[0].menuList1 : "Home"}</li>
-          <li>{language ? Burmese[0].menuList2 : "Menu List"}</li>
+          <Link to={"/"} style={{ textDecoration: "none" }}>
+            <li>{language ? Burmese[0].menuList1 : "Home"}</li>
+          </Link>
+          <Link to={"/menu"} style={{ textDecoration: "none" }}>
+            <li>{language ? Burmese[0].menuList2 : "Menu List"}</li>
+          </Link>
           <li>{language ? Burmese[0].menuList3 : "About Us"}</li>
           <li>{language ? Burmese[0].menuList4 : "Contact"}</li>
         </ul>

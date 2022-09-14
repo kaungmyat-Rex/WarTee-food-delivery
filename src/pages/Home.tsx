@@ -22,8 +22,12 @@ import pointer2 from "../img/pointer2.png";
 import Footer from "../component/Footer";
 import { Burmese } from "../component/Burmese";
 
-const Home = () => {
-  const [language, setLanguage] = useState<boolean>(false);
+interface props {
+  language: boolean;
+  setLanguage: (data: boolean) => void;
+}
+
+const Home = ({ language, setLanguage }: props) => {
   return (
     <>
       <Navbar language={language} setLanguage={setLanguage} />
@@ -44,11 +48,15 @@ const Home = () => {
               <img className="bgImage" src={blob} alt="blob" />
             </div>
             <div className="bd-section-text">
-              <h4 className="text-itemName">Chicken Burgur</h4>
-              <p className="text-itemPrice">2500Ks</p>
+              <h4 className="text-itemName">
+                {language ? Burmese[0].itemList1 : "Chicken Burgur"}
+              </h4>
+              <p className="text-itemPrice">
+                {language ? Burmese[0].priceBm1 : "2500 Ks"}
+              </p>
               <button className="button-3">
                 {" "}
-                <span>Order Now</span>
+                <span>{language ? Burmese[0].buttonBm : "Order Now"}</span>
               </button>
             </div>
           </div>
@@ -61,11 +69,15 @@ const Home = () => {
               <img className="bgImage2" src={blob2} alt="blob" />
             </div>
             <div className="bd-section-text-two">
-              <h4 className="text-itemName-two">Bubble Tea</h4>
-              <p className="text-itemPrice-two">1500Ks</p>
+              <h4 className="text-itemName-two">
+                {language ? Burmese[0].itemList2 : "Bubble Tea"}
+              </h4>
+              <p className="text-itemPrice-two">
+                {language ? Burmese[0].priceBm2 : "1500 Ks"}
+              </p>
               <button className="button-3-two">
                 {" "}
-                <span>Order Now</span>
+                <span>{language ? Burmese[0].buttonBm : "Order Now"}</span>
               </button>
             </div>
           </div>
@@ -78,11 +90,15 @@ const Home = () => {
               <img className="bgImage3" src={blob3} alt="blob3" />
             </div>
             <div className="bd-section-text-three">
-              <h4 className="text-itemName-three">Chicken Pizza</h4>
-              <p className="text-itemPrice-three">6000Ks</p>
+              <h4 className="text-itemName-three">
+                {language ? Burmese[0].itemList3 : "Chicken Pizza"}
+              </h4>
+              <p className="text-itemPrice-three">
+                {language ? Burmese[0].priceBm3 : "6000 Ks"}
+              </p>
               <button className="button-3-three">
                 {" "}
-                <span>Order Now</span>
+                <span>{language ? Burmese[0].buttonBm : "Order Now"}</span>
               </button>
             </div>
           </div>
@@ -129,7 +145,9 @@ const Home = () => {
             <div className="promo-about-boder">
               <div className="promo-about-one">
                 <TbTruckDelivery className="promo-icon-one" />
-                <p className="promo-title-one">Best Delivery</p>
+                <p className="promo-title-one">
+                  {language ? Burmese[0].serveList1 : "Best Delivery"}
+                </p>
                 <div className="promo-bar"></div>
                 <p className="promo-text-one">
                   High-quality delivery service delivered to your home
@@ -137,7 +155,9 @@ const Home = () => {
               </div>
               <div className="promo-about-two">
                 <BiTime className="promo-icon-two" />
-                <p className="promo-title-two">Fast like Flash</p>
+                <p className="promo-title-two">
+                  {language ? Burmese[0].serveList2 : "Fast like Flash"}
+                </p>
                 <div className="promo-bar"></div>
                 <p className="promo-text-two">
                   Everything you order at -will be quickly delivered to you
@@ -145,7 +165,10 @@ const Home = () => {
               </div>
               <div className="promo-about-three">
                 <MdOutlineFastfood className="promo-icon-three" />
-                <p className="promo-title-three">Fresh Food</p>
+                <p className="promo-title-three">
+                  {" "}
+                  {language ? Burmese[0].serveList3 : "Fresh Food"}
+                </p>
                 <div className="promo-bar"></div>
                 <p className="promo-text-three">
                   Best ingredients to cock the tasty fresh food for you
@@ -153,7 +176,9 @@ const Home = () => {
               </div>
               <div className="promo-about-four">
                 <BiDish className="promo-icon-four" />
-                <p className="promo-title-four">Variety Food</p>
+                <p className="promo-title-four">
+                  {language ? Burmese[0].serveList4 : "Variety Food"}
+                </p>
                 <div className="promo-bar"></div>
                 <p className="promo-text-four">
                   A wide Variety of fast food , desserts and drinks
@@ -178,8 +203,10 @@ const Home = () => {
                 Step <span style={{ color: "#ffb259" }}>One</span>
               </p>
               <p className="guide-title-text">
-                "Search the in the menu that you want to order and click add to
-                cart icon"{" "}
+                {" "}
+                {language
+                  ? Burmese[0].usageList1
+                  : "Search the in the menu that you want to order and click add to cart icon"}
               </p>
             </div>
             <div className="guide-bar"></div>
@@ -188,8 +215,9 @@ const Home = () => {
                 Step <span style={{ color: "#589873" }}>Two</span>
               </p>
               <p className="guide-title-text">
-                "Add the count number of your order List and write your current
-                location such as name of town and street"
+                {language
+                  ? Burmese[0].usageList2
+                  : "Add the count number of your order List and write your current location such as name of town and street"}
               </p>
             </div>
             <div className="guide-bar"></div>
@@ -198,8 +226,9 @@ const Home = () => {
                 Step <span style={{ color: "#D85d44" }}>Three</span>
               </p>
               <p className="guide-title-text">
-                "Checkout your menu that's on your order list ,select payment
-                method and print your coupon"
+                {language
+                  ? Burmese[0].usageList3
+                  : "Checkout your menu that's on your order list ,select payment method and print your coupon"}
               </p>
             </div>
           </div>
