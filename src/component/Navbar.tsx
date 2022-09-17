@@ -6,10 +6,7 @@ import logo from "../img/logo.png";
 import { Burmese } from "./Burmese";
 import { Link } from "react-router-dom";
 
-interface props {
-  language: boolean;
-  setLanguage: (data: boolean) => void;
-}
+import { props } from "../component/interface";
 
 const Navbar = ({ language, setLanguage }: props) => {
   const [infobox, setInfobox] = useState<boolean>(false);
@@ -54,7 +51,9 @@ const Navbar = ({ language, setLanguage }: props) => {
           <Link to={"/menu"} style={{ textDecoration: "none" }}>
             <li>{language ? Burmese[0].menuList2 : "Menu List"}</li>
           </Link>
-          <li>{language ? Burmese[0].menuList3 : "About Us"}</li>
+          <Link to={"/about"} style={{ textDecoration: "none" }}>
+            <li>{language ? Burmese[0].menuList3 : "About Us"}</li>
+          </Link>
           <li>{language ? Burmese[0].menuList4 : "Contact"}</li>
         </ul>
       </div>

@@ -6,10 +6,7 @@ import { FaPizzaSlice } from "react-icons/fa";
 import { SiBuymeacoffee } from "react-icons/si";
 import { BiDish } from "react-icons/bi";
 import { Burmese } from "../component/Burmese";
-interface props {
-  language: boolean;
-  setLanguage: (data: boolean) => void;
-}
+import { props } from "../component/interface";
 
 const Menu = ({ language, setLanguage }: props) => {
   return (

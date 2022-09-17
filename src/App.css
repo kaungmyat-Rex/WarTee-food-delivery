@@ -1235,3 +1235,159 @@ Menu page start from here
 
   padding-right: 20px;
 }
+
+/* --------------------
+
+
+
+about page start here
+
+
+
+
+
+-----------------------*/
+
+.about-section {
+  background-color: #f4eee1;
+}
+
+.about-section-main {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  background: rgb(79, 36, 27);
+  background: linear-gradient(
+    188deg,
+    rgba(79, 36, 27, 1) 10%,
+    rgba(153, 72, 56, 1) 50%,
+    rgba(216, 93, 68, 1) 90%
+  );
+}
+
+.about-main-boder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-main-body {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px 100px 0px;
+  color: #e3d8c1;
+}
+
+.about-title {
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 40px;
+
+  margin: 0;
+  padding-right: 50px;
+}
+
+.about-bar {
+  width: 3px;
+  height: 270px;
+  background-color: #e3d8c1;
+  opacity: 0.3;
+  border-radius: 5px;
+}
+
+.about-text {
+  width: 50%;
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  padding-left: 50px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+.testi-section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testi-section-title h3 {
+  margin: 0;
+  color: #3d1d15;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 23px;
+  padding: 50px;
+}
+
+.testi-section-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 150px;
+}
+
+.testi-section-body {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+}
+
+.testi-model-one,
+.testi-model-two,
+.testi-model-three {
+  position: relative;
+  background-color: white;
+  margin: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testi-icon {
+  color: #d85d44;
+  font-size: 50px;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+}
+
+.testi-text {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 15px;
+
+  letter-spacing: 0.5px;
+  padding: 20px 20px 0px 20px;
+}
+
+.testi-bar {
+  width: 100px;
+  height: 3px;
+  background-color: #d85d44;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.testi-name {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 17px;
+  font-weight: 900;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+
+.testi-icon-ps {
+  position: absolute;
+  color: #d85d44;
+  font-size: 35px;
+  right: -15px;
+  bottom: -10px;
+}
