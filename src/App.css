@@ -1391,3 +1391,295 @@ about page start here
   right: -15px;
   bottom: -10px;
 }
+
+/* --------------------
+
+
+
+contact page start here
+
+
+
+
+
+-----------------------*/
+
+.contact-section-main {
+  background: rgb(79, 36, 27);
+  background: linear-gradient(
+    188deg,
+    rgba(79, 36, 27, 1) 10%,
+    rgba(153, 72, 56, 1) 50%,
+    rgba(216, 93, 68, 1) 90%
+  );
+}
+
+.contact-main-boder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-main-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px 100px 0px;
+  color: #e3d8c1;
+}
+
+.contact-title {
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 40px;
+  margin: 0;
+  padding-right: 50px;
+}
+
+.contact-bar {
+  width: 3px;
+  height: 270px;
+  background-color: #e3d8c1;
+  opacity: 0.3;
+  border-radius: 5px;
+}
+
+.contact-form-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameandphone {
+  display: flex;
+  flex-direction: row;
+}
+
+.name {
+  border: none;
+  background: none;
+  outline: none;
+  width: 250px;
+  height: 35px;
+
+  border-bottom: 2px solid #e3d8c1;
+  opacity: 0.7;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  margin-left: 100px;
+  font-size: 17px;
+}
+
+.name::placeholder {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.phone {
+  border: none;
+  background: none;
+  outline: none;
+  width: 250px;
+  height: 35px;
+
+  border-bottom: 2px solid #e3d8c1;
+  opacity: 0.7;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  margin-left: 30px;
+  font-size: 17px;
+}
+
+.phone::placeholder {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.email {
+  border: none;
+  background: none;
+  outline: none;
+  width: 535px;
+  height: 35px;
+  font-size: 17px;
+  border-bottom: 2px solid #e3d8c1;
+  opacity: 0.7;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  margin: 20px 0px 0px 100px;
+}
+
+.email::placeholder {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.message {
+  border: none;
+  background: none;
+  outline: none;
+  width: 535px;
+  height: 35px;
+  font-size: 17px;
+  border-bottom: 2px solid #e3d8c1;
+  opacity: 0.7;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  margin: 20px 0px 0px 100px;
+}
+
+.message::placeholder {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.submit-btn {
+  width: 140px;
+  height: 50px;
+  z-index: 2;
+  appearance: none;
+  background-color: #589873;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin: 30px 0px 0px 100px;
+}
+
+.submit-btn:hover {
+  background-color: #3d1d15;
+}
+
+.contact-info-main {
+  padding-bottom: 100px;
+}
+
+.contact-info-boder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info-body {
+  width: 80%;
+}
+
+.contact-title-text h4 {
+  color: #3d1d15;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 23px;
+  padding: 20px;
+}
+
+.contact-info-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact-address-main {
+  position: relative;
+  width: 40%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.contact-address-main p {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  padding: 30px 30px 30px 30px;
+}
+
+.quote-left {
+  position: absolute;
+  color: #d85d44;
+  font-size: 40px;
+  left: -20px;
+  top: -20px;
+}
+
+.quote-right {
+  position: absolute;
+  color: #d85d44;
+  font-size: 40px;
+  right: 0px;
+  bottom: -20px;
+}
+
+.contact-social-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 300px;
+}
+
+.contact-social-main p {
+  color: #5a2a1f;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.social-icon-list {
+  color: #d85d44;
+  font-size: 30px;
+}
+
+.social-bar {
+  width: 100px;
+  height: 3px;
+  background-color: #d85d44;
+}
+
+.s-icon1,
+.s-icon2,
+.s-icon3,
+.s-icon4 {
+  padding: 20px 10px 0px 10px;
+}
+
+.s-icon1:hover,
+.s-icon2:hover,
+.s-icon3:hover,
+.s-icon4:hover {
+  color: #3d1d15;
+}

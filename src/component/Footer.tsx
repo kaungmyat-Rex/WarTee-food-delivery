@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../img/logo.png";
-import { BsFacebook } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
+
 import wave from "../img/wave.svg";
 import waveBrown from "../img/wave-brown.svg";
 import waveLight from "../img/wave-ligntcoral.svg";
@@ -36,8 +35,6 @@ const Footer = () => {
         </div>
         <div className="copy-right-list">
           <p>@CopyRight 2022 All Right Reserve</p>
-          <BsFacebook className="cp-facebook" />
-          <BsInstagram className="cp-insta" />
         </div>
       </div>
     </div>

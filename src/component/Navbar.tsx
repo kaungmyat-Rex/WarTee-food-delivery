@@ -54,7 +54,9 @@ const Navbar = ({ language, setLanguage }: props) => {
           <Link to={"/about"} style={{ textDecoration: "none" }}>
             <li>{language ? Burmese[0].menuList3 : "About Us"}</li>
           </Link>
-          <li>{language ? Burmese[0].menuList4 : "Contact"}</li>
+          <Link to={"/contact"} style={{ textDecoration: "none" }}>
+            <li>{language ? Burmese[0].menuList4 : "Contact"}</li>
+          </Link>
         </ul>
       </div>
       <div className="main-icon">
