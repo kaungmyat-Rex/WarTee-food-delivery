@@ -1,23 +1,48 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Addproduct from "./pages/Addprodect";
+import axios from "axios";
 function App() {
   const [language, setLanguage] = useState<boolean>(false);
+  const [productData, setProductData] = useState<any>([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/getmenu").then((res) => {
+      setProductData(res.data);
+    });
+  }, []);
+
+  console.log(productData);
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route
             path="/"
-            element={<Home language={language} setLanguage={setLanguage} />}
+            element={
+              <Home
+                language={language}
+                setLanguage={setLanguage}
+                productData={productData}
+              />
+            }
           />
           <Route
             path="/menu"
-            element={<Menu language={language} setLanguage={setLanguage} />}
+            element={
+              <Menu
+                language={language}
+                setLanguage={setLanguage}
+                productData={productData}
+              />
+            }
           />
           <Route
             path="/about"
@@ -26,6 +51,12 @@ function App() {
           <Route
             path="/contact"
             element={<Contact language={language} setLanguage={setLanguage} />}
+          />
+          <Route
+            path="/add"
+            element={
+              <Addproduct language={language} setLanguage={setLanguage} />
+            }
           />
         </Routes>
       </BrowserRouter>

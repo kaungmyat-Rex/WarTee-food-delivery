@@ -1,14 +1,22 @@
 import React from "react";
 import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
 import { BiSearchAlt } from "react-icons/bi";
 import { FaHamburger } from "react-icons/fa";
 import { FaPizzaSlice } from "react-icons/fa";
 import { SiBuymeacoffee } from "react-icons/si";
 import { BiDish } from "react-icons/bi";
 import { Burmese } from "../component/Burmese";
-import { props } from "../component/interface";
+import { BiShoppingBag } from "react-icons/bi";
+import logo from "../img/logo.png";
 
-const Menu = ({ language, setLanguage }: props) => {
+interface props {
+  language: boolean;
+  setLanguage: (data: boolean) => void;
+  productData: any;
+}
+
+const Menu = ({ language, setLanguage, productData }: props) => {
   return (
     <div className="section-menu">
       <Navbar language={language} setLanguage={setLanguage} />
@@ -53,6 +61,28 @@ const Menu = ({ language, setLanguage }: props) => {
           </div>
         </div>
       </div>
+      <div className="menupage-list-main">
+        <div className="menupage-list-boder">
+          <div className="menupage-list-body">
+            {productData.map((e: any) => (
+              <div className="menupage-list">
+                <img className="menupage-img" src={e.imageLink} alt="" />
+                <img className="menupage-logo" src={logo} alt="" />
+                <div className="menupage-info">
+                  <div className="menupage-text">
+                    <p className="mp-name">{e.typeFood}</p>
+                    <p className="mp-price">{e.price} Ks</p>
+                  </div>
+                  <div className="mp-add">
+                    <BiShoppingBag className="mp-add-icon" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

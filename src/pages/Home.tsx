@@ -6,6 +6,7 @@ import pizza from "../img/Pizza1.png";
 import blob from "../img/blob.svg";
 import blob2 from "../img/blob2.svg";
 import blob3 from "../img/blob3.svg";
+import logo from "../img/logo.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -25,9 +26,10 @@ import { Burmese } from "../component/Burmese";
 interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
+  productData: [];
 }
 
-const Home = ({ language, setLanguage }: props) => {
+const Home = ({ language, setLanguage, productData }: props) => {
   return (
     <>
       <Navbar language={language} setLanguage={setLanguage} />
@@ -113,13 +115,13 @@ const Home = ({ language, setLanguage }: props) => {
           </div>
           <div className="section-product-main">
             <div className="product-list">
-              {fakeproduct.map((e, index) => (
-                <div className="product-main" key={index}>
-                  <img className="product-img" src={e.productImg} alt="" />
-                  <img className="logoimg" src={e.logoImg} alt="" />
+              {productData.slice(-4).map((e: any) => (
+                <div className="product-main" key={e._id}>
+                  <img className="product-img" src={e.imageLink} alt="" />
+                  <img className="logoimg" src={logo} alt="" />
                   <div className="product-info">
                     <div className="product-text">
-                      <p className="pd-name">{e.name}</p>
+                      <p className="pd-name">{e.typeFood}</p>
                       <p className="pd-price">{e.price} Ks</p>
                     </div>
                     <div className="pd-add">

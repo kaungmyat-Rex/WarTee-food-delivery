@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { BiShoppingBag } from "react-icons/bi";
-import { FaInfoCircle } from "react-icons/fa";
+import { FaInfoCircle, FaSadCry } from "react-icons/fa";
 import logo from "../img/logo.png";
 import { Burmese } from "./Burmese";
 import { Link } from "react-router-dom";
@@ -10,6 +10,8 @@ import { props } from "../component/interface";
 
 const Navbar = ({ language, setLanguage }: props) => {
   const [infobox, setInfobox] = useState<boolean>(false);
+  const [searchActive, setSearchActive] = useState(false);
+  const inputRef = useRef(null);
 
   const backtofalse = (): void => {
     setInfobox(false);
@@ -25,6 +27,15 @@ const Navbar = ({ language, setLanguage }: props) => {
     setLanguage(true);
     setInfobox(true);
     setTimeout(backtofalse, 3000);
+  };
+
+  const searchActiveFun = (): void => {
+    setSearchActive(true);
+    inputRef.current.focus();
+  };
+
+  const searchActiveFunOut = (): void => {
+    setSearchActive(false);
   };
 
   return (
@@ -62,7 +73,19 @@ const Navbar = ({ language, setLanguage }: props) => {
       <div className="main-icon">
         <ul className="main-icon-ul">
           <li>
-            <BiSearchAlt className="search-icon" />
+            <BiSearchAlt
+              className="search-icon"
+              onClick={() => searchActiveFun()}
+            />
+            <input
+              type="text"
+              placeholder="Search Foods"
+              onBlur={() => searchActiveFunOut()}
+              ref={inputRef}
+              className={`nav-search-bar ${
+                searchActive ? "nav-search-bar-show" : ""
+              }`}
+            />
           </li>
           <li>
             <BiShoppingBag className="shop-icon" />

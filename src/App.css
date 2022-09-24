@@ -37,13 +37,13 @@ Main Nav section-----------
   margin-left: 15px;
   color: #3d1d15;
   font-family: "Playfair Display", serif;
-  font-size: 22px;
+  font-size: 18px;
   padding-bottom: 20px;
 }
 
 .logo-text-minor {
   font-family: "Manrope", sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   position: absolute;
   color: #5a2a1f;
 }
@@ -66,10 +66,11 @@ Main Nav section-----------
 
 .main-menu-ul li {
   font-family: "Manrope", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   margin-left: 50px;
   color: #3d1d15;
   cursor: pointer;
+  font-weight: 600;
 }
 .main-menu-ul li:hover {
   color: #d85d44;
@@ -88,6 +89,7 @@ Main Nav section-----------
 .main-icon-ul {
   display: flex;
   list-style: none;
+  position: relative;
 }
 
 .search-icon,
@@ -189,6 +191,31 @@ Main Nav section-----------
   font-size: 14px;
   letter-spacing: 1px;
   margin: 0;
+}
+
+.nav-search-bar {
+  background-color: #f4eee1;
+  position: absolute;
+  width: 0px;
+  border: none;
+  border-bottom: 2.3px solid #5a2a1f;
+  font-size: 18px;
+  outline: none;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  letter-spacing: 0.5px;
+
+  right: 175px;
+  top: 0px;
+  transition: 500ms;
+  opacity: 0;
+}
+
+.nav-search-bar-show {
+  position: absolute;
+  width: 330px;
+  transition: 500ms;
+  opacity: 1;
 }
 /*----------
 
@@ -1236,6 +1263,113 @@ Menu page start from here
   padding-right: 20px;
 }
 
+.menupage-list-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.menupage-list-boder {
+  width: 80%;
+}
+
+.menupage-list-body {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+
+.menupage-list {
+  width: 240px;
+  height: 295px;
+  background: rgb(249, 247, 245);
+  background: linear-gradient(
+    357deg,
+    rgba(249, 247, 245, 1) 12%,
+    rgba(244, 238, 225, 1) 100%
+  );
+  margin-left: 50px;
+  margin-top: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.menupage-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 40px 0px 0px 40px;
+  transition: 300ms;
+}
+
+.menupage-logo {
+  width: 40px;
+  left: 20px;
+  top: 20px;
+  position: absolute;
+  opacity: 0.3;
+}
+
+.menupage-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menupage-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.mp-name {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.mp-price {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 20px;
+  color: #d85d44;
+  margin-top: 5px;
+}
+
+.mp-add {
+  border-radius: 50px;
+  background-color: #e8e4dd;
+  margin-left: 50px;
+  margin-top: 50px;
+  cursor: pointer;
+  color: #3d1d15;
+  transition: 200ms;
+}
+
+.mp-add-icon {
+  font-size: 24px;
+  padding: 4px;
+}
+
+.mp-add:hover {
+  background-color: #d85d44;
+  transition: 200ms;
+  color: #f4eee1;
+}
+
+.menupage-img:hover {
+  transform: scale(1.5);
+  transition: 300ms;
+}
 /* --------------------
 
 
