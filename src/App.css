@@ -217,6 +217,80 @@ Main Nav section-----------
   transition: 500ms;
   opacity: 1;
 }
+
+.search-box-main {
+  width: 300px;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  background-color: #f4eee1;
+  top: 45px;
+  right: 175px;
+  display: none;
+}
+
+.search-box-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px #8f836a;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.search-box-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  padding: 10px 10px 10px 10px;
+}
+
+.search-box-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-box-name {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.search-box-price {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #d85d44;
+}
+
+.search-box-list:hover {
+  background-color: #e0dacc;
+}
+
+.searh-box-main-show {
+  display: block;
+}
+
+.seemore {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  color: #d85d44;
+  font-weight: 600;
+  padding-right: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 /*----------
 
 

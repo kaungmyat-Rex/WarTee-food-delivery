@@ -46,16 +46,32 @@ function App() {
           />
           <Route
             path="/about"
-            element={<About language={language} setLanguage={setLanguage} />}
+            element={
+              <About
+                language={language}
+                setLanguage={setLanguage}
+                productData={productData}
+              />
+            }
           />
           <Route
             path="/contact"
-            element={<Contact language={language} setLanguage={setLanguage} />}
+            element={
+              <Contact
+                language={language}
+                setLanguage={setLanguage}
+                productData={productData}
+              />
+            }
           />
           <Route
             path="/add"
             element={
-              <Addproduct language={language} setLanguage={setLanguage} />
+              <Addproduct
+                language={language}
+                setLanguage={setLanguage}
+                productData={productData}
+              />
             }
           />
         </Routes>

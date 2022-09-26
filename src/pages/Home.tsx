@@ -32,7 +32,11 @@ interface props {
 const Home = ({ language, setLanguage, productData }: props) => {
   return (
     <>
-      <Navbar language={language} setLanguage={setLanguage} />
+      <Navbar
+        language={language}
+        setLanguage={setLanguage}
+        productData={productData}
+      />
 
       <Swiper
         cssMode={true}

@@ -1,17 +1,25 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { BiShoppingBag } from "react-icons/bi";
 import { FaInfoCircle, FaSadCry } from "react-icons/fa";
 import logo from "../img/logo.png";
 import { Burmese } from "./Burmese";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-import { props } from "../component/interface";
+interface props {
+  language: boolean;
+  setLanguage: (data: boolean) => void;
+  productData: any;
+}
 
-const Navbar = ({ language, setLanguage }: props) => {
+const Navbar = ({ language, setLanguage, productData }: props) => {
   const [infobox, setInfobox] = useState<boolean>(false);
-  const [searchActive, setSearchActive] = useState(false);
+  const [searchActive, setSearchActive] = useState<boolean>(false);
+  const [serarchInput, setSearchInput] = useState<string>("");
+  const [searchInputCheck, setSearchInputCheck] = useState<boolean>(false);
+
   const inputRef = useRef(null);
+  const navigate = useNavigate();
 
   const backtofalse = (): void => {
     setInfobox(false);
@@ -35,9 +43,21 @@ const Navbar = ({ language, setLanguage }: props) => {
   };
 
   const searchActiveFunOut = (): void => {
-    setSearchActive(false);
+    if (serarchInput == "") {
+      setSearchActive(false);
+      setSearchInputCheck(false);
+    }
   };
 
+  useEffect(() => {
+    if (serarchInput === "") {
+      setSearchInputCheck(false);
+    } else {
+      setSearchInputCheck(true);
+    }
+  }, [serarchInput]);
+
+  // console.log(productData.filter((e: any) => e.typeFood === "Chicken Burgar"));
   return (
     <div className="main-nav">
       <div className="main-logo">
@@ -80,12 +100,47 @@ const Navbar = ({ language, setLanguage }: props) => {
             <input
               type="text"
               placeholder="Search Foods"
+              value={serarchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
               onBlur={() => searchActiveFunOut()}
               ref={inputRef}
               className={`nav-search-bar ${
                 searchActive ? "nav-search-bar-show" : ""
               }`}
             />
+            <div
+              className={`search-box-main ${
+                searchInputCheck ? "searh-box-main-show" : ""
+              }`}
+            >
+              {productData
+                .filter((e: any) => {
+                  if (
+                    e.typeFood
+                      .toLowerCase()
+                      .includes(serarchInput.toLowerCase())
+                  ) {
+                    return e;
+                  }
+                })
+                .map((e: any) => (
+                  <div className="search-box-list" key={e._id}>
+                    <img className="search-box-img" src={e.imageLink} alt="" />
+                    <div className="search-box-info">
+                      <p className="search-box-name">{e.typeFood}</p>
+                      <p className="search-box-price">{e.price} Ks</p>
+                    </div>
+                  </div>
+                ))}
+              <div className="seemore">
+                <p
+                  style={{ cursor: "pointer" }}
+                  onClick={() => navigate("/menu")}
+                >
+                  see more review --
+                </p>
+              </div>
+            </div>
           </li>
           <li>
             <BiShoppingBag className="shop-icon" />

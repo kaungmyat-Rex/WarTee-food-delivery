@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import Navbar from "../component/Navbar";
-import { props } from "../component/interface";
+
 import axios from "axios";
 import { storage } from "../component/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { chownSync } from "fs";
-
-const Addproduct = ({ language, setLanguage }: props) => {
+interface props {
+  language: boolean;
+  setLanguage: (data: boolean) => void;
+  productData: any;
+}
+const Addproduct = ({ language, setLanguage, productData }: props) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [desc, setDesc] = useState("");
@@ -49,7 +53,11 @@ const Addproduct = ({ language, setLanguage }: props) => {
 
   return (
     <>
-      <Navbar language={language} setLanguage={setLanguage} />
+      <Navbar
+        language={language}
+        setLanguage={setLanguage}
+        productData={productData}
+      />
       <input
         type="text"
         placeholder="food name"

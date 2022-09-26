@@ -1,15 +1,23 @@
 import React from "react";
 import Navbar from "../component/Navbar";
-import { props } from "../component/interface";
+
 // import { BsChatRightQuote } from "react-icons/bs";
 import { BsChatRightQuoteFill } from "react-icons/bs";
 import { BsPersonCircle } from "react-icons/bs";
 import Footer from "../component/Footer";
-
-const About = ({ language, setLanguage }: props) => {
+interface props {
+  language: boolean;
+  setLanguage: (data: boolean) => void;
+  productData: [];
+}
+const About = ({ language, setLanguage, productData }: props) => {
   return (
     <div className="about-section">
-      <Navbar language={language} setLanguage={setLanguage} />
+      <Navbar
+        language={language}
+        setLanguage={setLanguage}
+        productData={productData}
+      />
       <div className="about-section-main">
         <div className="about-main-boder">
           <div className="about-main-body">

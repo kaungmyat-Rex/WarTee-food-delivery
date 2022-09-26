@@ -1,5 +1,5 @@
 import React from "react";
-import { props } from "../component/interface";
+
 import Navbar from "../component/Navbar";
 import { ImQuotesLeft } from "react-icons/im";
 import { ImQuotesRight } from "react-icons/im";
@@ -9,11 +9,20 @@ import { FaViber } from "react-icons/fa";
 import { BsMessenger } from "react-icons/bs";
 
 import Footer from "../component/Footer";
+interface props {
+  language: boolean;
+  setLanguage: (data: boolean) => void;
+  productData: any;
+}
 
-const Contact = ({ language, setLanguage }: props) => {
+const Contact = ({ language, setLanguage, productData }: props) => {
   return (
     <div style={{ backgroundColor: "#f4eee1" }}>
-      <Navbar language={language} setLanguage={setLanguage} />
+      <Navbar
+        language={language}
+        setLanguage={setLanguage}
+        productData={productData}
+      />
       <div className="contact-section-main">
         <div className="contact-main-boder">
           <div className="contact-main-body">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import { BiSearchAlt } from "react-icons/bi";
@@ -17,9 +17,47 @@ interface props {
 }
 
 const Menu = ({ language, setLanguage, productData }: props) => {
+  const [menusearchinput, setMenusearchinput] = useState<string>("");
+  const [filterData, setFilterData] = useState<any>(productData);
+  const [inputmenuCheck, setinputmenuCheck] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (menusearchinput === "") {
+      setinputmenuCheck(false);
+    } else {
+      setinputmenuCheck(true);
+    }
+  }, [menusearchinput]);
+
+  const findFilterBurgar = () => {
+    setFilterData(
+      productData.filter((e: any) =>
+        e.typeFood.toLowerCase().includes("burgar")
+      )
+    );
+  };
+
+  const findFilterPizza = () => {
+    setFilterData(
+      productData.filter((e: any) => e.typeFood.toLowerCase().includes("pizza"))
+    );
+  };
+
+  console.log(filterData);
+
+  const findFilterDrink = () => {
+    setFilterData(
+      productData.filter((e: any) => e.typeFood.toLowerCase().includes("tea"))
+    );
+  };
+
   return (
     <div className="section-menu">
-      <Navbar language={language} setLanguage={setLanguage} />
+      <Navbar
+        language={language}
+        setLanguage={setLanguage}
+        productData={productData}
+      />
       <div className="menu-title-main">
         <h4 className="menu-title">
           {language ? Burmese[0].menuTitle : "Our Menu"}
@@ -30,30 +68,35 @@ const Menu = ({ language, setLanguage, productData }: props) => {
           <input
             type="text"
             className="search"
+            onChange={(e) => setMenusearchinput(e.target.value)}
+            value={menusearchinput}
             placeholder={language ? Burmese[0].search : "search menu"}
           />
           <BiSearchAlt className="search-menu-icon" />
         </div>
         <div className="menu-filter">
-          <div className="menu-filter-one">
+          <div
+            className="menu-filter-one"
+            onClick={() => setFilterData(productData)}
+          >
             <BiDish className="filter-icon-one" />
             <p className="filter-name-one">
               {language ? Burmese[0].filter1 : "Default"}
             </p>
           </div>
-          <div className="menu-filter-two">
+          <div className="menu-filter-two" onClick={() => findFilterBurgar()}>
             <FaHamburger className="filter-icon-two" />
             <p className="filter-name-two">
               {language ? Burmese[0].filter2 : "Burger"}
             </p>
           </div>
-          <div className="menu-filter-three">
+          <div className="menu-filter-three" onClick={() => findFilterPizza()}>
             <FaPizzaSlice className="filter-icon-three" />
             <p className="filter-name-three">
               {language ? Burmese[0].filter3 : "Pizza"}
             </p>
           </div>
-          <div className="menu-filter-four">
+          <div className="menu-filter-four" onClick={() => findFilterDrink()}>
             <SiBuymeacoffee className="filter-icon-four" />
             <p className="filter-name-four">
               {language ? Burmese[0].filter4 : "Drink"}
@@ -64,21 +107,43 @@ const Menu = ({ language, setLanguage, productData }: props) => {
       <div className="menupage-list-main">
         <div className="menupage-list-boder">
           <div className="menupage-list-body">
-            {productData.map((e: any) => (
-              <div className="menupage-list">
-                <img className="menupage-img" src={e.imageLink} alt="" />
-                <img className="menupage-logo" src={logo} alt="" />
-                <div className="menupage-info">
-                  <div className="menupage-text">
-                    <p className="mp-name">{e.typeFood}</p>
-                    <p className="mp-price">{e.price} Ks</p>
+            {inputmenuCheck
+              ? productData
+                  .filter((e: any) =>
+                    e.typeFood
+                      .toLowerCase()
+                      .includes(menusearchinput.toLowerCase())
+                  )
+                  .map((e: any) => (
+                    <div className="menupage-list" key={e._id}>
+                      <img className="menupage-img" src={e.imageLink} alt="" />
+                      <img className="menupage-logo" src={logo} alt="" />
+                      <div className="menupage-info">
+                        <div className="menupage-text">
+                          <p className="mp-name">{e.typeFood}</p>
+                          <p className="mp-price">{e.price} Ks</p>
+                        </div>
+                        <div className="mp-add">
+                          <BiShoppingBag className="mp-add-icon" />
+                        </div>
+                      </div>
+                    </div>
+                  ))
+              : filterData.map((e: any) => (
+                  <div className="menupage-list" key={e._id}>
+                    <img className="menupage-img" src={e.imageLink} alt="" />
+                    <img className="menupage-logo" src={logo} alt="" />
+                    <div className="menupage-info">
+                      <div className="menupage-text">
+                        <p className="mp-name">{e.typeFood}</p>
+                        <p className="mp-price">{e.price} Ks</p>
+                      </div>
+                      <div className="mp-add">
+                        <BiShoppingBag className="mp-add-icon" />
+                      </div>
+                    </div>
                   </div>
-                  <div className="mp-add">
-                    <BiShoppingBag className="mp-add-icon" />
-                  </div>
-                </div>
-              </div>
-            ))}
+                ))}
           </div>
         </div>
       </div>
