@@ -1891,3 +1891,232 @@ contact page start here
 .s-icon4:hover {
   color: #3d1d15;
 }
+
+/* -----------
+
+
+single page
+
+
+--------------*/
+
+.single-section-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-boder {
+  width: 80%;
+}
+
+.single-body-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.single-product-img-main {
+  width: 340px;
+  height: 355px;
+  /* background: rgb(249, 247, 245);
+  background: linear-gradient(
+    357deg,
+    rgba(249, 247, 245, 1) 12%,
+    rgba(244, 238, 225, 1) 100%
+  ); */
+  background-color: #f4eee1;
+  margin-left: 50px;
+  margin-top: 50px;
+  border-radius: 10px;
+
+  position: relative;
+}
+
+.single-product-img {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+}
+
+.single-product-info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 90px;
+}
+
+.single-info-title {
+  color: #3d1d15;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 23px;
+  margin: 0px;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.single-text {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.single-price {
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #d85d44;
+}
+
+.single-product-btn {
+  display: flex;
+  flex-direction: row;
+}
+
+.single-count-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 30px;
+}
+
+.count-btn-left,
+.count-btn-right {
+  border: none;
+  background: none;
+  font-size: 20px;
+  margin: 0px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.count-btn-left {
+  padding-left: 20px;
+}
+.count-btn-right {
+  padding-right: 20px;
+}
+.count-item {
+  margin: 0px;
+  font-size: 17px;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-weight: 600;
+  padding: 0px 15px 4px 15px;
+}
+
+.single-atc {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+
+  appearance: none;
+  background-color: #d85d44;
+  border: 1px solid #f4eee1;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  font-family: "Manrope", sans-serif;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 10px 10px 10px 10px;
+}
+
+.single-atc:hover {
+  background-color: #3d1d15;
+  transition: 300ms;
+}
+
+.single-desIng-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.single-desIng-boder {
+  width: 75%;
+}
+
+.single-desIng-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.single-desc-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.single-desc-title {
+  font-family: "Manrope", sans-serif;
+  color: #d85d44;
+  font-size: 17px;
+  font-weight: 900;
+  margin: 0px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 10px;
+  margin-bottom: 30px;
+}
+
+.single-desc-text {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 14px;
+  margin: 0px;
+}
+
+.single-bar {
+  width: 1px;
+  height: 200px;
+  background-color: rgb(192, 192, 192);
+  margin: 0px 20px 0px 20px;
+}
+
+.single-ing-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.single-ing-title {
+  font-family: "Manrope", sans-serif;
+  color: #d85d44;
+  font-size: 17px;
+  font-weight: 900;
+  margin: 0px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 10px;
+  margin-bottom: 30px;
+}
+
+.single-ing-text {
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 14px;
+  margin: 0px;
+}

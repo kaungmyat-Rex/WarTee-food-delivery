@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Addproduct from "./pages/Addprodect";
 import axios from "axios";
+import Single from "./pages/Single";
 function App() {
   const [language, setLanguage] = useState<boolean>(false);
   const [productData, setProductData] = useState<any>([]);
@@ -58,6 +59,16 @@ function App() {
             path="/contact"
             element={
               <Contact
+                language={language}
+                setLanguage={setLanguage}
+                productData={productData}
+              />
+            }
+          />
+          <Route
+            path="/menu/:id"
+            element={
+              <Single
                 language={language}
                 setLanguage={setLanguage}
                 productData={productData}

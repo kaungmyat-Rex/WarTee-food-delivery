@@ -9,17 +9,19 @@ import { BiDish } from "react-icons/bi";
 import { Burmese } from "../component/Burmese";
 import { BiShoppingBag } from "react-icons/bi";
 import logo from "../img/logo.png";
+import { useNavigate } from "react-router-dom";
 
 interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
-  productData: any;
+  productData: [];
 }
 
 const Menu = ({ language, setLanguage, productData }: props) => {
   const [menusearchinput, setMenusearchinput] = useState<string>("");
   const [filterData, setFilterData] = useState<any>(productData);
   const [inputmenuCheck, setinputmenuCheck] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (menusearchinput === "") {
@@ -124,7 +126,10 @@ const Menu = ({ language, setLanguage, productData }: props) => {
                           <p className="mp-price">{e.price} Ks</p>
                         </div>
                         <div className="mp-add">
-                          <BiShoppingBag className="mp-add-icon" />
+                          <BiShoppingBag
+                            className="mp-add-icon"
+                            onClick={() => navigate(`/menu/${e._id}`)}
+                          />
                         </div>
                       </div>
                     </div>
@@ -139,7 +144,10 @@ const Menu = ({ language, setLanguage, productData }: props) => {
                         <p className="mp-price">{e.price} Ks</p>
                       </div>
                       <div className="mp-add">
-                        <BiShoppingBag className="mp-add-icon" />
+                        <BiShoppingBag
+                          className="mp-add-icon"
+                          onClick={() => navigate(`/menu/${e._id}`)}
+                        />
                       </div>
                     </div>
                   </div>
