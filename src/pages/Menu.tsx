@@ -15,9 +15,17 @@ interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
   productData: [];
+  setAddtocartList: any;
+  addtocartList: any;
 }
 
-const Menu = ({ language, setLanguage, productData }: props) => {
+const Menu = ({
+  language,
+  setLanguage,
+  productData,
+  setAddtocartList,
+  addtocartList,
+}: props) => {
   const [menusearchinput, setMenusearchinput] = useState<string>("");
   const [filterData, setFilterData] = useState<any>(productData);
   const [inputmenuCheck, setinputmenuCheck] = useState<boolean>(false);
@@ -45,8 +53,6 @@ const Menu = ({ language, setLanguage, productData }: props) => {
     );
   };
 
-  console.log(filterData);
-
   const findFilterDrink = () => {
     setFilterData(
       productData.filter((e: any) => e.typeFood.toLowerCase().includes("tea"))
@@ -59,10 +65,12 @@ const Menu = ({ language, setLanguage, productData }: props) => {
         language={language}
         setLanguage={setLanguage}
         productData={productData}
+        setAddtocartList={setAddtocartList}
+        addtocartList={addtocartList}
       />
       <div className="menu-title-main">
         <h4 className="menu-title">
-          {language ? Burmese[0].menuTitle : "Our Menu"}
+          {language ? Burmese[0].menuTitle : "OUR MENU"}
         </h4>
       </div>
       <div className="menu-search-main">

@@ -13,15 +13,25 @@ interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
   productData: any;
+  setAddtocartList: any;
+  addtocartList: any;
 }
 
-const Contact = ({ language, setLanguage, productData }: props) => {
+const Contact = ({
+  language,
+  setLanguage,
+  productData,
+  setAddtocartList,
+  addtocartList,
+}: props) => {
   return (
     <div style={{ backgroundColor: "#f4eee1" }}>
       <Navbar
         language={language}
         setLanguage={setLanguage}
         productData={productData}
+        setAddtocartList={setAddtocartList}
+        addtocartList={addtocartList}
       />
       <div className="contact-section-main">
         <div className="contact-main-boder">

@@ -9,9 +9,11 @@ import Contact from "./pages/Contact";
 import Addproduct from "./pages/Addprodect";
 import axios from "axios";
 import Single from "./pages/Single";
+import AddtoCart from "./pages/AddtoCart";
 function App() {
   const [language, setLanguage] = useState<boolean>(false);
   const [productData, setProductData] = useState<any>([]);
+  const [addtocartList, setAddtocartList] = useState<[]>([]);
 
   useEffect(() => {
     axios.get("http://localhost:3001/getmenu").then((res) => {
@@ -19,7 +21,7 @@ function App() {
     });
   }, []);
 
-  console.log(productData);
+  console.log(addtocartList);
 
   return (
     <div className="App">
@@ -32,6 +34,8 @@ function App() {
                 language={language}
                 setLanguage={setLanguage}
                 productData={productData}
+                setAddtocartList={setAddtocartList}
+                addtocartList={addtocartList}
               />
             }
           />
@@ -42,6 +46,8 @@ function App() {
                 language={language}
                 setLanguage={setLanguage}
                 productData={productData}
+                setAddtocartList={setAddtocartList}
+                addtocartList={addtocartList}
               />
             }
           />
@@ -52,6 +58,8 @@ function App() {
                 language={language}
                 setLanguage={setLanguage}
                 productData={productData}
+                setAddtocartList={setAddtocartList}
+                addtocartList={addtocartList}
               />
             }
           />
@@ -62,6 +70,8 @@ function App() {
                 language={language}
                 setLanguage={setLanguage}
                 productData={productData}
+                setAddtocartList={setAddtocartList}
+                addtocartList={addtocartList}
               />
             }
           />
@@ -72,6 +82,8 @@ function App() {
                 language={language}
                 setLanguage={setLanguage}
                 productData={productData}
+                setAddtocartList={setAddtocartList}
+                addtocartList={addtocartList}
               />
             }
           />
@@ -82,6 +94,20 @@ function App() {
                 language={language}
                 setLanguage={setLanguage}
                 productData={productData}
+                setAddtocartList={setAddtocartList}
+                addtocartList={addtocartList}
+              />
+            }
+          />
+          <Route
+            path="/addtocart"
+            element={
+              <AddtoCart
+                language={language}
+                setLanguage={setLanguage}
+                productData={productData}
+                setAddtocartList={setAddtocartList}
+                addtocartList={addtocartList}
               />
             }
           />

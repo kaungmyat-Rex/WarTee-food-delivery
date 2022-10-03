@@ -27,15 +27,25 @@ interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
   productData: [];
+  setAddtocartList: any;
+  addtocartList: any;
 }
 
-const Home = ({ language, setLanguage, productData }: props) => {
+const Home = ({
+  language,
+  setLanguage,
+  productData,
+  setAddtocartList,
+  addtocartList,
+}: props) => {
   return (
     <>
       <Navbar
         language={language}
         setLanguage={setLanguage}
         productData={productData}
+        setAddtocartList={setAddtocartList}
+        addtocartList={addtocartList}
       />
 
       <Swiper

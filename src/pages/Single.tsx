@@ -10,9 +10,18 @@ interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
   productData: [];
+  setAddtocartList: any;
+  addtocartList: any;
 }
-const Single = ({ language, setLanguage, productData }: props) => {
+const Single = ({
+  language,
+  setLanguage,
+  productData,
+  setAddtocartList,
+  addtocartList,
+}: props) => {
   const [countItem, setCountItem] = useState<number>(1);
+
   const { id } = useParams();
   const filter = productData.filter((e: any) => e._id === id);
 
@@ -24,17 +33,40 @@ const Single = ({ language, setLanguage, productData }: props) => {
     }
   };
 
+  const addToCartFun = (
+    foodId: any,
+    foodImage: string,
+    foodName: string,
+    foodPrice: number,
+    foodCount: number,
+    foodCountResult: number
+  ) => {
+    setAddtocartList([
+      ...addtocartList,
+      {
+        id: foodId,
+        image: foodImage,
+        name: foodName,
+        price: foodPrice,
+        count: foodCount,
+        result: foodCountResult,
+      },
+    ]);
+  };
+
   return (
     <>
       <Navbar
         language={language}
         setLanguage={setLanguage}
         productData={productData}
+        setAddtocartList={setAddtocartList}
+        addtocartList={addtocartList}
       />
       <div className="single-section-main">
         <div className="single-boder">
           {filter.map((e: any) => (
-            <div>
+            <div key={e._id}>
               <div className="single-body-main">
                 <div className="single-product-img-main">
                   <img
@@ -63,7 +95,19 @@ const Single = ({ language, setLanguage, productData }: props) => {
                         <AiOutlinePlus />
                       </button>
                     </div>
-                    <button className="single-atc">
+                    <button
+                      className="single-atc"
+                      onClick={() =>
+                        addToCartFun(
+                          e._id,
+                          e.imageLink,
+                          e.typeFood,
+                          e.price,
+                          countItem,
+                          e.price * countItem
+                        )
+                      }
+                    >
                       <BiShoppingBag
                         style={{ fontSize: "20px", marginRight: "10px" }}
                       />

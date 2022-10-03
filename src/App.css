@@ -291,6 +291,27 @@ Main Nav section-----------
   padding-right: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+
+.addtocart-show {
+  position: absolute;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  background-color: #d85d44;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  text-align: center;
+  top: -30px;
+  right: -10px;
+  display: none;
+}
+
+.addtocart-showDisplay {
+  display: block;
+}
+
 /*----------
 
 
@@ -1905,6 +1926,7 @@ single page
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #f8f6f2;
 }
 
 .single-boder {
@@ -2119,4 +2141,331 @@ single page
   color: #3d1d15;
   font-size: 14px;
   margin: 0px;
+}
+
+/* ---------
+
+
+add to cart page
+
+
+-------------*/
+
+.cart-section-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f0eb;
+}
+
+.cart-section-boder {
+  width: 60%;
+}
+.cart-section-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.cart-title-main {
+  color: #3d1d15;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 23px;
+}
+
+.cart-title-mini {
+  font-family: "Manrope", sans-serif;
+  color: #87655c;
+  font-size: 15px;
+  font-weight: 600;
+}
+#customers {
+  font-family: "Manrope", sans-serif;
+
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers th {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#customers td,
+#customers th {
+  padding: 8px;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #dad4d4;
+  color: #3d1d15;
+}
+
+#customers td {
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid rgb(228, 224, 224);
+}
+
+.table-img-name {
+  display: flex;
+  align-items: center;
+}
+
+.table-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  background-color: #f4eee1;
+  border-radius: 13px;
+}
+
+.table-total {
+  border-top: 2px solid #3d1d15;
+}
+
+.table-p {
+  color: #d85d44;
+  margin-left: 20px;
+}
+
+.table-icon {
+  font-size: 25px;
+}
+
+.checkout-section-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f0eb;
+  padding-bottom: 100px;
+}
+
+.checkout-section-boder {
+  width: 70%;
+}
+.checkout-section-body {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-title {
+  color: #3d1d15;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 23px;
+  padding-bottom: 30px;
+}
+
+.checkout-owner-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-info {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+  list-style: none;
+  font-family: "Manrope", sans-serif;
+  color: #5e3f37;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.checkout-info li {
+  margin-top: 20px;
+}
+
+.checkout-bar {
+  width: 1px;
+  height: 200px;
+  background-color: rgb(192, 192, 192);
+  margin: 0px 70px 0px 30px;
+}
+
+.checkout-message {
+  display: flex;
+  flex: 6;
+  margin: 0px;
+  font-family: "Manrope", sans-serif;
+  color: #3d1d15;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  background-color: white;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.checkout-icon {
+  position: absolute;
+  color: #d85d44;
+  font-size: 50px;
+  left: -20px;
+  top: -20px;
+}
+
+.checkout-input-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+.checkout-input-numberandname {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-KpayNumber {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+
+.input-KpayNumber p {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input-KpayNumber input {
+  font-family: "Manrope", sans-serif;
+  width: 250px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  outline: none;
+  font-weight: 600;
+}
+
+.input-KpayNumber input:focus {
+  outline-style: outset;
+  outline-color: #d85d44;
+}
+
+.input-KpayName {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.input-KpayName p {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input-KpayName input {
+  font-family: "Manrope", sans-serif;
+  width: 250px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  outline: none;
+  font-weight: 600;
+}
+
+.input-KpayName input:focus {
+  outline-style: outset;
+  outline-color: #d85d44;
+}
+
+.input-Kpayslip {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.input-Kpayslip p {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input-Kpayslip input {
+  font-family: "Manrope", sans-serif;
+  width: 540px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  outline: none;
+  font-weight: 600;
+}
+
+.input-Kpayslip input:focus {
+  outline-style: outset;
+  outline-color: #d85d44;
+}
+
+.input-sel-city {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-sel-city p {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input-sel-city select {
+  width: 540px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  outline: none;
+  font-weight: 600;
+}
+
+.checkout-btn-main {
+  appearance: none;
+  background-color: #d85d44;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 70px;
+  padding-right: 70px;
+  margin-top: 50px;
+}
+
+.checkout-btn-main:hover {
+  background-color: #3d1d15;
+  transition: 300ms;
 }

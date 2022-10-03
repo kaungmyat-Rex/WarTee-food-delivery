@@ -9,8 +9,16 @@ interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
   productData: any;
+  setAddtocartList: any;
+  addtocartList: any;
 }
-const Addproduct = ({ language, setLanguage, productData }: props) => {
+const Addproduct = ({
+  language,
+  setLanguage,
+  productData,
+  setAddtocartList,
+  addtocartList,
+}: props) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [desc, setDesc] = useState("");
@@ -57,6 +65,8 @@ const Addproduct = ({ language, setLanguage, productData }: props) => {
         language={language}
         setLanguage={setLanguage}
         productData={productData}
+        setAddtocartList={setAddtocartList}
+        addtocartList={addtocartList}
       />
       <input
         type="text"

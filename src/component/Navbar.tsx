@@ -10,14 +10,22 @@ interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
   productData: any;
+  setAddtocartList: any;
+  addtocartList: any;
 }
 
-const Navbar = ({ language, setLanguage, productData }: props) => {
+const Navbar = ({
+  language,
+  setLanguage,
+  productData,
+  setAddtocartList,
+  addtocartList,
+}: props) => {
   const [infobox, setInfobox] = useState<boolean>(false);
   const [searchActive, setSearchActive] = useState<boolean>(false);
   const [serarchInput, setSearchInput] = useState<string>("");
   const [searchInputCheck, setSearchInputCheck] = useState<boolean>(false);
-
+  const [checkaddtocart, setCheckaddtocart] = useState<boolean>(false);
   const inputRef = useRef(null);
   const navigate = useNavigate();
 
@@ -56,6 +64,14 @@ const Navbar = ({ language, setLanguage, productData }: props) => {
       setSearchInputCheck(true);
     }
   }, [serarchInput]);
+
+  useEffect(() => {
+    if (addtocartList.length === 0) {
+      setCheckaddtocart(false);
+    } else {
+      setCheckaddtocart(true);
+    }
+  }, [addtocartList]);
 
   // console.log(productData.filter((e: any) => e.typeFood === "Chicken Burgar"));
   return (
@@ -143,7 +159,16 @@ const Navbar = ({ language, setLanguage, productData }: props) => {
             </div>
           </li>
           <li>
-            <BiShoppingBag className="shop-icon" />
+            <Link to={"/addtocart"} style={{ position: "relative" }}>
+              <BiShoppingBag className="shop-icon" />
+              <p
+                className={`addtocart-show ${
+                  checkaddtocart ? "addtocart-showDisplay" : ""
+                }`}
+              >
+                {addtocartList.length}
+              </p>
+            </Link>
           </li>
           <li>
             <div className="language">

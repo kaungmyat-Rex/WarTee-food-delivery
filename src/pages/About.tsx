@@ -9,14 +9,24 @@ interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
   productData: [];
+  setAddtocartList: any;
+  addtocartList: any;
 }
-const About = ({ language, setLanguage, productData }: props) => {
+const About = ({
+  language,
+  setLanguage,
+  productData,
+  setAddtocartList,
+  addtocartList,
+}: props) => {
   return (
     <div className="about-section">
       <Navbar
         language={language}
         setLanguage={setLanguage}
         productData={productData}
+        setAddtocartList={setAddtocartList}
+        addtocartList={addtocartList}
       />
       <div className="about-section-main">
         <div className="about-main-boder">
