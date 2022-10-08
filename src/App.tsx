@@ -12,6 +12,7 @@ import Single from "./pages/Single";
 import AddtoCart from "./pages/AddtoCart";
 function App() {
   const [language, setLanguage] = useState<boolean>(false);
+  const [addNoti, setAddNoti] = useState<boolean>(false);
   const [productData, setProductData] = useState<any>([]);
   const [addtocartList, setAddtocartList] = useState<[]>([]);
 
@@ -20,8 +21,6 @@ function App() {
       setProductData(res.data);
     });
   }, []);
-
-  console.log(addtocartList);
 
   return (
     <div className="App">
@@ -36,6 +35,7 @@ function App() {
                 productData={productData}
                 setAddtocartList={setAddtocartList}
                 addtocartList={addtocartList}
+                addNoti={addNoti}
               />
             }
           />
@@ -48,6 +48,7 @@ function App() {
                 productData={productData}
                 setAddtocartList={setAddtocartList}
                 addtocartList={addtocartList}
+                addNoti={addNoti}
               />
             }
           />
@@ -60,6 +61,7 @@ function App() {
                 productData={productData}
                 setAddtocartList={setAddtocartList}
                 addtocartList={addtocartList}
+                addNoti={addNoti}
               />
             }
           />
@@ -72,6 +74,7 @@ function App() {
                 productData={productData}
                 setAddtocartList={setAddtocartList}
                 addtocartList={addtocartList}
+                addNoti={addNoti}
               />
             }
           />
@@ -84,6 +87,8 @@ function App() {
                 productData={productData}
                 setAddtocartList={setAddtocartList}
                 addtocartList={addtocartList}
+                addNoti={addNoti}
+                setAddNoti={setAddNoti}
               />
             }
           />
@@ -96,6 +101,7 @@ function App() {
                 productData={productData}
                 setAddtocartList={setAddtocartList}
                 addtocartList={addtocartList}
+                addNoti={addNoti}
               />
             }
           />
@@ -108,6 +114,7 @@ function App() {
                 productData={productData}
                 setAddtocartList={setAddtocartList}
                 addtocartList={addtocartList}
+                addNoti={addNoti}
               />
             }
           />

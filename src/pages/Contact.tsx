@@ -15,6 +15,7 @@ interface props {
   productData: any;
   setAddtocartList: any;
   addtocartList: any;
+  addNoti: boolean;
 }
 
 const Contact = ({
@@ -23,6 +24,7 @@ const Contact = ({
   productData,
   setAddtocartList,
   addtocartList,
+  addNoti,
 }: props) => {
   return (
     <div style={{ backgroundColor: "#f4eee1" }}>
@@ -32,6 +34,7 @@ const Contact = ({
         productData={productData}
         setAddtocartList={setAddtocartList}
         addtocartList={addtocartList}
+        addNoti={addNoti}
       />
       <div className="contact-section-main">
         <div className="contact-main-boder">

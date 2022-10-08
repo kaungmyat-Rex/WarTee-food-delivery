@@ -5,6 +5,7 @@ import { BiShoppingBag } from "react-icons/bi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
 import Footer from "../component/Footer";
+import InfoModel from "../component/InfoModel";
 
 interface props {
   language: boolean;
@@ -12,6 +13,8 @@ interface props {
   productData: [];
   setAddtocartList: any;
   addtocartList: any;
+  addNoti: boolean;
+  setAddNoti: any;
 }
 const Single = ({
   language,
@@ -19,8 +22,13 @@ const Single = ({
   productData,
   setAddtocartList,
   addtocartList,
+  addNoti,
+  setAddNoti,
 }: props) => {
   const [countItem, setCountItem] = useState<number>(1);
+
+  const [openmodel, setOpenmodel] = useState<boolean>(false);
+  const [foodFormodel, setFoodFormodel] = useState();
 
   const { id } = useParams();
   const filter = productData.filter((e: any) => e._id === id);
@@ -33,6 +41,19 @@ const Single = ({
     }
   };
 
+  const stopnotifun = () => {
+    setAddNoti(false);
+  };
+
+  const addnotifun = () => {
+    setAddNoti(true);
+    setTimeout(stopnotifun, 3000);
+  };
+
+  // const checkFun = (foodId: any) => {
+  //   return addtocartList.filter((e: any) => e.id === foodId);
+  // };
+
   const addToCartFun = (
     foodId: any,
     foodImage: string,
@@ -41,27 +62,40 @@ const Single = ({
     foodCount: number,
     foodCountResult: number
   ) => {
-    setAddtocartList([
-      ...addtocartList,
-      {
-        id: foodId,
-        image: foodImage,
-        name: foodName,
-        price: foodPrice,
-        count: foodCount,
-        result: foodCountResult,
-      },
-    ]);
+    const checkdupli = addtocartList.filter((e: any) => e.id === foodId);
+    setFoodFormodel(checkdupli.map((e: any) => e.name)[0]);
+    if (checkdupli.length === 1) {
+      setOpenmodel(true);
+    } else {
+      setAddtocartList([
+        ...addtocartList,
+        {
+          id: foodId,
+          image: foodImage,
+          name: foodName,
+          price: foodPrice,
+          count: foodCount,
+          result: foodCountResult,
+        },
+      ]);
+      addnotifun();
+    }
   };
 
   return (
     <>
+      <InfoModel
+        openmodel={openmodel}
+        setOpenmodel={setOpenmodel}
+        foodFormodel={foodFormodel}
+      />
       <Navbar
         language={language}
         setLanguage={setLanguage}
         productData={productData}
         setAddtocartList={setAddtocartList}
         addtocartList={addtocartList}
+        addNoti={addNoti}
       />
       <div className="single-section-main">
         <div className="single-boder">
@@ -77,6 +111,7 @@ const Single = ({
                 </div>
                 <div className="single-product-info">
                   <p className="single-info-title">Fast Food Feature</p>
+
                   <p className="single-text">{e.typeFood}</p>
                   <p className="single-price">{e.price * countItem} Ks</p>
                   <div className="single-product-btn">

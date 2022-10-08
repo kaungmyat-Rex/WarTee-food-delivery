@@ -11,6 +11,7 @@ interface props {
   productData: any;
   setAddtocartList: any;
   addtocartList: any;
+  addNoti: boolean;
 }
 const Addproduct = ({
   language,
@@ -18,6 +19,7 @@ const Addproduct = ({
   productData,
   setAddtocartList,
   addtocartList,
+  addNoti,
 }: props) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -67,6 +69,7 @@ const Addproduct = ({
         productData={productData}
         setAddtocartList={setAddtocartList}
         addtocartList={addtocartList}
+        addNoti={addNoti}
       />
       <input
         type="text"

@@ -17,6 +17,7 @@ interface props {
   productData: [];
   setAddtocartList: any;
   addtocartList: any;
+  addNoti: boolean;
 }
 
 const Menu = ({
@@ -25,6 +26,7 @@ const Menu = ({
   productData,
   setAddtocartList,
   addtocartList,
+  addNoti,
 }: props) => {
   const [menusearchinput, setMenusearchinput] = useState<string>("");
   const [filterData, setFilterData] = useState<any>(productData);
@@ -67,6 +69,7 @@ const Menu = ({
         productData={productData}
         setAddtocartList={setAddtocartList}
         addtocartList={addtocartList}
+        addNoti={addNoti}
       />
       <div className="menu-title-main">
         <h4 className="menu-title">
@@ -125,7 +128,11 @@ const Menu = ({
                       .includes(menusearchinput.toLowerCase())
                   )
                   .map((e: any) => (
-                    <div className="menupage-list" key={e._id}>
+                    <div
+                      className="menupage-list"
+                      key={e._id}
+                      onClick={() => navigate(`/menu/${e._id}`)}
+                    >
                       <img className="menupage-img" src={e.imageLink} alt="" />
                       <img className="menupage-logo" src={logo} alt="" />
                       <div className="menupage-info">
@@ -143,7 +150,11 @@ const Menu = ({
                     </div>
                   ))
               : filterData.map((e: any) => (
-                  <div className="menupage-list" key={e._id}>
+                  <div
+                    className="menupage-list"
+                    key={e._id}
+                    onClick={() => navigate(`/menu/${e._id}`)}
+                  >
                     <img className="menupage-img" src={e.imageLink} alt="" />
                     <img className="menupage-logo" src={logo} alt="" />
                     <div className="menupage-info">

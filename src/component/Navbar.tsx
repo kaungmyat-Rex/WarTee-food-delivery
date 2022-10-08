@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { BiShoppingBag } from "react-icons/bi";
-import { FaInfoCircle, FaSadCry } from "react-icons/fa";
+import { FaInfoCircle, FaSadCry, FaCheckCircle } from "react-icons/fa";
 import logo from "../img/logo.png";
 import { Burmese } from "./Burmese";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,6 +12,7 @@ interface props {
   productData: any;
   setAddtocartList: any;
   addtocartList: any;
+  addNoti: boolean;
 }
 
 const Navbar = ({
@@ -20,12 +21,14 @@ const Navbar = ({
   productData,
   setAddtocartList,
   addtocartList,
+  addNoti,
 }: props) => {
   const [infobox, setInfobox] = useState<boolean>(false);
   const [searchActive, setSearchActive] = useState<boolean>(false);
   const [serarchInput, setSearchInput] = useState<string>("");
   const [searchInputCheck, setSearchInputCheck] = useState<boolean>(false);
   const [checkaddtocart, setCheckaddtocart] = useState<boolean>(false);
+
   const inputRef = useRef(null);
   const navigate = useNavigate();
 
@@ -74,6 +77,7 @@ const Navbar = ({
   }, [addtocartList]);
 
   // console.log(productData.filter((e: any) => e.typeFood === "Chicken Burgar"));
+
   return (
     <div className="main-nav">
       <div className="main-logo">
@@ -140,7 +144,11 @@ const Navbar = ({
                   }
                 })
                 .map((e: any) => (
-                  <div className="search-box-list" key={e._id}>
+                  <div
+                    className="search-box-list"
+                    key={e._id}
+                    onClick={() => navigate(`/menu/${e._id}`)}
+                  >
                     <img className="search-box-img" src={e.imageLink} alt="" />
                     <div className="search-box-info">
                       <p className="search-box-name">{e.typeFood}</p>
@@ -153,7 +161,7 @@ const Navbar = ({
                   style={{ cursor: "pointer" }}
                   onClick={() => navigate("/menu")}
                 >
-                  see more review --
+                  see more food --
                 </p>
               </div>
             </div>
@@ -193,11 +201,16 @@ const Navbar = ({
           <p>
             Website language change to{" "}
             <span
-              style={{ color: "#3d1d15", fontWeight: "900", fontSize: "16px" }}
+              style={{ color: "#F0A160", fontWeight: "900", fontSize: "16px" }}
             >
               {language ? "Burmese" : "English"}
             </span>
           </p>
+        </div>
+        <div className={`add-info ${addNoti ? "add-info-show" : ""}`}>
+          <FaCheckCircle className="add-info-icon" />
+
+          <p>Your order food add to the list</p>
         </div>
       </div>
     </div>

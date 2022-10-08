@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 /* 
 
@@ -20,6 +22,9 @@ Main Nav section-----------
   flex-direction: row;
   background-color: #f4eee1;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+  z-index: 2000;
+  position: fixed;
+  top: 0px;
 }
 
 .main-logo {
@@ -79,6 +84,7 @@ Main Nav section-----------
   text-underline-offset: 7px;
   transition: 400ms;
 }
+
 .main-icon {
   display: flex;
   flex: 4;
@@ -191,6 +197,50 @@ Main Nav section-----------
   font-size: 14px;
   letter-spacing: 1px;
   margin: 0;
+}
+
+.add-info {
+  position: absolute;
+  top: -70px;
+
+  width: 350px;
+  height: 50px;
+  display: flex;
+  background: rgb(255, 137, 113);
+  background: linear-gradient(
+    270deg,
+    rgba(255, 137, 113, 1) 0%,
+    rgba(236, 115, 91, 1) 0%,
+    rgba(229, 107, 83, 1) 0%,
+    rgba(225, 103, 78, 1) 0%,
+    rgba(216, 93, 68, 1) 100%
+  );
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  z-index: 2;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 2px;
+  transition: 500ms;
+}
+
+.add-info-show {
+  position: absolute;
+  top: 70px;
+  transition: 500ms;
+}
+.add-info p {
+  color: #f4eee1;
+  font-family: "Manrope", sans-serif;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.add-info-icon {
+  font-size: 25px;
+  margin: 0;
+  color: #f4eee1;
 }
 
 .nav-search-bar {
@@ -339,12 +389,13 @@ the start of main body-----
 .swiper {
   width: 100%;
   height: 550px;
+  margin-top: 50px;
 }
 
 .swiper-slide {
   display: flex;
   width: 900px;
-  height: 500px;
+  height: 550px;
 
   align-items: center;
 }
@@ -358,6 +409,7 @@ the start of main body-----
   position: relative;
   width: 100%;
   height: 550px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -649,6 +701,7 @@ the start of main body-----
 .section-feature-title {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .feature-title {
@@ -656,6 +709,16 @@ the start of main body-----
   font-family: "Lexend Tera", sans-serif;
   font-size: 23px;
   padding: 20px;
+}
+
+.menu-seemore {
+  color: #3d1d15;
+  font-family: "Manrope", sans-serif;
+  position: absolute;
+  right: 120px;
+  top: 50px;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .section-product-main {
@@ -1249,6 +1312,7 @@ Menu page start from here
 .section-menu {
   width: auto;
   height: auto;
+  padding-top: 50px;
 }
 
 .menu-title-main {
@@ -1482,6 +1546,7 @@ about page start here
 }
 
 .about-section-main {
+  padding-top: 50px;
   display: flex;
   justify-self: center;
   align-items: center;
@@ -1634,6 +1699,7 @@ contact page start here
 -----------------------*/
 
 .contact-section-main {
+  padding-top: 50px;
   background: rgb(79, 36, 27);
   background: linear-gradient(
     188deg,
@@ -1922,6 +1988,7 @@ single page
 --------------*/
 
 .single-section-main {
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2143,6 +2210,97 @@ single page
   margin: 0px;
 }
 
+.section-infomodel {
+  display: none;
+}
+
+.infomodel-show {
+  display: block;
+}
+
+.section-infomodel-main {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 3000;
+  backdrop-filter: grayscale(100%) blur(2px) brightness(20%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-infomodel-boder {
+  width: 30%;
+
+  background: rgb(162, 46, 23);
+  background: linear-gradient(
+    90deg,
+    rgba(162, 46, 23, 1) 0%,
+    rgba(188, 69, 45, 1) 0%,
+    rgba(201, 80, 56, 1) 0%,
+    rgba(216, 93, 68, 1) 100%
+  );
+  border-radius: 10px;
+}
+
+.infomodel-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.infomodel-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0px 20px 20px;
+}
+
+.model-icon {
+  color: #e3d8c1;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 40px;
+  margin: 0;
+}
+
+.infomodel-header p {
+  margin: 0px;
+  color: #e3d8c1;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  margin-left: 30px;
+}
+
+.model-icon-close {
+  position: absolute;
+  top: -50px;
+  right: -30px;
+  color: #e3d8c1;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.model-icon-close:hover {
+  color: rgb(170, 44, 44);
+}
+.model-bar {
+  width: 100%;
+  height: 2px;
+  background-color: #e3d8c1;
+  opacity: 0.4;
+}
+
+.model-text-p {
+  color: #e3d8c1;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 20px;
+  font-weight: 600;
+}
 /* ---------
 
 
@@ -2152,6 +2310,7 @@ add to cart page
 -------------*/
 
 .cart-section-main {
+  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

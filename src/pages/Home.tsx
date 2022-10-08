@@ -22,6 +22,7 @@ import pointer from "../img/point.png";
 import pointer2 from "../img/pointer2.png";
 import Footer from "../component/Footer";
 import { Burmese } from "../component/Burmese";
+import { useNavigate, Link } from "react-router-dom";
 
 interface props {
   language: boolean;
@@ -29,6 +30,7 @@ interface props {
   productData: [];
   setAddtocartList: any;
   addtocartList: any;
+  addNoti: boolean;
 }
 
 const Home = ({
@@ -37,7 +39,9 @@ const Home = ({
   productData,
   setAddtocartList,
   addtocartList,
+  addNoti,
 }: props) => {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar
@@ -46,6 +50,7 @@ const Home = ({
         productData={productData}
         setAddtocartList={setAddtocartList}
         addtocartList={addtocartList}
+        addNoti={addNoti}
       />
 
       <Swiper
@@ -126,11 +131,19 @@ const Home = ({
             <h4 className="feature-title">
               {language ? Burmese[0].title1 : "FEATURE MENU OF WARTEE"}
             </h4>
+            <Link to={"/menu"}>
+              {" "}
+              <p className="menu-seemore">see more</p>
+            </Link>
           </div>
           <div className="section-product-main">
             <div className="product-list">
               {productData.slice(-4).map((e: any) => (
-                <div className="product-main" key={e._id}>
+                <div
+                  className="product-main"
+                  key={e._id}
+                  onClick={() => navigate(`/menu/${e._id}`)}
+                >
                   <img className="product-img" src={e.imageLink} alt="" />
                   <img className="logoimg" src={logo} alt="" />
                   <div className="product-info">
@@ -139,7 +152,10 @@ const Home = ({
                       <p className="pd-price">{e.price} Ks</p>
                     </div>
                     <div className="pd-add">
-                      <BiShoppingBag className="pd-add-icon" />
+                      <BiShoppingBag
+                        className="pd-add-icon"
+                        onClick={() => navigate(`/menu/${e._id}`)}
+                      />
                     </div>
                   </div>
                 </div>

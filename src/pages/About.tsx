@@ -11,6 +11,7 @@ interface props {
   productData: [];
   setAddtocartList: any;
   addtocartList: any;
+  addNoti: boolean;
 }
 const About = ({
   language,
@@ -18,6 +19,7 @@ const About = ({
   productData,
   setAddtocartList,
   addtocartList,
+  addNoti,
 }: props) => {
   return (
     <div className="about-section">
@@ -27,6 +29,7 @@ const About = ({
         productData={productData}
         setAddtocartList={setAddtocartList}
         addtocartList={addtocartList}
+        addNoti={addNoti}
       />
       <div className="about-section-main">
         <div className="about-main-boder">
@@ -46,7 +49,7 @@ const About = ({
         </div>
       </div>
       <div className="testi-section-title">
-        <h3>They Trust Us</h3>
+        <h3>THEY TRUST US</h3>
       </div>
       <div className="testi-section-main">
         <div className="testi-section-body">

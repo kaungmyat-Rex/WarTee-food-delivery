@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import { AiOutlineClose } from "react-icons/ai";
 import { RiErrorWarningLine } from "react-icons/ri";
@@ -9,6 +9,7 @@ interface props {
   productData: [];
   setAddtocartList: any;
   addtocartList: [];
+  addNoti: boolean;
 }
 
 const AddtoCart = ({
@@ -17,6 +18,7 @@ const AddtoCart = ({
   productData,
   setAddtocartList,
   addtocartList,
+  addNoti,
 }: props) => {
   const options = [
     { value: "", text: "" },
@@ -26,6 +28,26 @@ const AddtoCart = ({
   ];
 
   const [selectCity, setSelectCity] = useState(options[0].value);
+  const [totalfoodprice, setTotalfoodprice] = useState<number>(0);
+  const [addtocartcheck, setAddtocartcheck] = useState<boolean>(false);
+
+  const DeleteFoodListFun = (id: string): void => {
+    const deletefood = addtocartList.filter((e: any) => e.id !== id);
+    setAddtocartList(deletefood);
+  };
+
+  useEffect(() => {
+    if (addtocartList.length === 0) {
+      setAddtocartcheck(true);
+    } else {
+      setAddtocartcheck(false);
+    }
+
+    const Totalprice = addtocartList
+      .map((e: any) => e.result)
+      .reduce((total, currentvalue) => (total = total + currentvalue), 0);
+    setTotalfoodprice(Totalprice);
+  }, [addtocartList]);
 
   return (
     <>
@@ -35,38 +57,55 @@ const AddtoCart = ({
         productData={productData}
         setAddtocartList={setAddtocartList}
         addtocartList={addtocartList}
+        addNoti={addNoti}
       />
       <div className="cart-section-main">
         <div className="cart-section-boder">
           <div className="cart-section-body">
             <h3 className="cart-title-main">SELECT PAYMENT METHOD</h3>
             <p className="cart-title-mini">Order list summary</p>
+
             <table id="customers">
-              <tr>
-                <th>Food Detail</th>
-                <th>Count</th>
-                <th>Price</th>
-                <th>Delete</th>
-              </tr>
-              {addtocartList.map((e: any) => (
+              <tbody>
                 <tr>
-                  <td className="table-img-name">
-                    {" "}
-                    <img className="table-img" src={e.image} alt="" />
-                    <p className="table-p">{e.name}</p>{" "}
-                  </td>
-                  <td>{e.count}</td>
-                  <td>{e.result} Ks</td>
-                  <td>
-                    <AiOutlineClose className="table-icon" />
-                  </td>
+                  <th>Food Detail</th>
+                  <th>Count</th>
+                  <th>Price</th>
+                  <th>Delete</th>
                 </tr>
-              ))}
-              <tr className="table-total">
-                <td>TOTAL PRICE</td>
-                <td></td>
-                <td>12500 KS</td>
-              </tr>
+                {addtocartcheck ? (
+                  <tr>
+                    <td>
+                      <p style={{ paddingTop: "50px", paddingBottom: "50px" }}>
+                        Your food order list is empty.
+                      </p>
+                    </td>
+                  </tr>
+                ) : (
+                  addtocartList.map((e: any) => (
+                    <tr key={e.id}>
+                      <td className="table-img-name">
+                        {" "}
+                        <img className="table-img" src={e.image} alt="" />
+                        <p className="table-p">{e.name}</p>{" "}
+                      </td>
+                      <td>{e.count}</td>
+                      <td>{e.result} Ks</td>
+                      <td>
+                        <AiOutlineClose
+                          className="table-icon"
+                          onClick={() => DeleteFoodListFun(e.id)}
+                        />
+                      </td>
+                    </tr>
+                  ))
+                )}
+                <tr className="table-total">
+                  <td>TOTAL PRICE</td>
+                  <td></td>
+                  <td>{totalfoodprice}KS</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
