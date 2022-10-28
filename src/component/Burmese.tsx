@@ -42,5 +42,15 @@ export const Burmese = [
     filter4: "သောက်စရာ",
 
     search: "ရှာရန်",
+
+    contextText1: "ဆက်သွယ်ရန်",
+    contextText2: "သင့်အမည်",
+    contextText3: "သင့်အီးမေး",
+    contextText4: "သင့်ဖုန်းနံပတ်",
+    contextText5: "သင့်မတ်ဆေ့",
+    contextText6: "ကျွန်တော်တို့ နေရာ",
+    contextText7: "ဆိုရှယ်မီဒီယာမှလည်း ဆက်သွယ်နိုင်ပါသည်",
+
+    aboutText1: "ဖောက်သည်များရဲ့ ရဗျုးများ",
   },
 ];

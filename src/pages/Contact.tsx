@@ -7,6 +7,7 @@ import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { FaViber } from "react-icons/fa";
 import { BsMessenger } from "react-icons/bs";
+import { Burmese } from "../component/Burmese";
 
 import Footer from "../component/Footer";
 interface props {
@@ -39,19 +40,35 @@ const Contact = ({
       <div className="contact-section-main">
         <div className="contact-main-boder">
           <div className="contact-main-body">
-            <h3 className="contact-title">Contact Us</h3>
+            <h3 className="contact-title">
+              {language ? Burmese[0].contextText1 : "Contact Us"}
+            </h3>
             <div className="contact-bar"></div>
             <div className="contact-form-main">
               <div className="nameandphone">
-                <input type="text" className="name" placeholder="Your Name" />
+                <input
+                  type="text"
+                  className="name"
+                  placeholder={language ? Burmese[0].contextText2 : "Your Name"}
+                />
                 <input
                   type="text"
                   className="phone"
-                  placeholder="Phone Number"
+                  placeholder={
+                    language ? Burmese[0].contextText4 : "Phone Number"
+                  }
                 />
               </div>
-              <input type="text" className="email" placeholder="Email" />
-              <input type="text" className="message" placeholder="Message" />
+              <input
+                type="text"
+                className="email"
+                placeholder={language ? Burmese[0].contextText3 : "Email"}
+              />
+              <input
+                type="text"
+                className="message"
+                placeholder={language ? Burmese[0].contextText5 : "Message"}
+              />
 
               <button className="submit-btn">Submit</button>
             </div>
@@ -62,7 +79,7 @@ const Contact = ({
       <div className="contact-info-main">
         <div className="contact-info-boder">
           <div className="contact-title-text">
-            <h4>WHERE ARE WE FROM?</h4>
+            <h4>{language ? Burmese[0].contextText6 : "WHERE ARE WE FROM?"}</h4>
           </div>
           <div className="contact-info-body">
             <div className="contact-address-main">
@@ -78,7 +95,9 @@ const Contact = ({
               <ImQuotesRight className="quote-right" />
             </div>
             <div className="contact-social-main">
-              <p>You can contact us from</p>
+              <p>
+                {language ? Burmese[0].contextText7 : "You can contact us from"}
+              </p>
               <div className="social-bar"></div>
               <div className="social-icon-list">
                 <BsFacebook className="s-icon1" />

@@ -5,6 +5,10 @@ import axios from "axios";
 import { storage } from "../component/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { chownSync } from "fs";
+import AdminNav from "../component/AdminNav";
+import Footer from "../component/Footer";
+import { SiHetzner } from "react-icons/si";
+import def from "../img/default.png";
 interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
@@ -28,6 +32,8 @@ const Addproduct = ({
   const [ingre, setIngre] = useState("");
   const [test, settest] = useState();
   const [linkimage, setLinkimage] = useState("");
+  const [imagename, setImagename] = useState("No image selected");
+  const [imageurl, setImageurl] = useState(def);
 
   const addDataFun = async () => {
     const imgref = ref(storage, `storeImg/${imagestore.name + Date.now()}`);
@@ -61,45 +67,105 @@ const Addproduct = ({
     //   .catch((err) => console.log(err));
   };
 
+  const formControl = (e: any) => {
+    setImagestore(e.target.files[0]);
+    setImagename(e.target.files[0].name);
+    setImageurl(URL.createObjectURL(e.target.files[0]));
+  };
+
   return (
-    <>
-      <Navbar
-        language={language}
-        setLanguage={setLanguage}
-        productData={productData}
-        setAddtocartList={setAddtocartList}
-        addtocartList={addtocartList}
-        addNoti={addNoti}
-      />
-      <input
-        type="text"
-        placeholder="food name"
-        onChange={(e) => setName(e.target.value)}
-        value={name}
-      />
-      <input
-        type="text"
-        placeholder="food price"
-        onChange={(e) => setPrice(e.target.value)}
-        value={price}
-      />
-      <input
-        type="text"
-        placeholder="food desc"
-        onChange={(e) => setDesc(e.target.value)}
-        value={desc}
-      />
-      <input
-        type="text"
-        placeholder="food ingre"
-        onChange={(e) => setIngre(e.target.value)}
-        value={ingre}
-      />
+    <div style={{ backgroundColor: "#f4eee1" }}>
+      <AdminNav />
+      <div className="admin-addproduct-title">
+        <h4>Add Foods</h4>
+        <p>Here your can add foods to your menu.</p>
+      </div>
+      <div className="admin-addproduct-form-main">
+        <div className="admin-form-left">
+          <h4>FOOD DETAIL</h4>
+          <p>Add your food detail here</p>
 
-      <input type="file" onChange={(e) => setImagestore(e.target.files[0])} />
+          <p>FOOD NAME</p>
+          <input
+            className="food-name"
+            type="text"
+            placeholder=" Enter Food Name Here"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
 
-      <button onClick={() => addDataFun()}>submit</button>
-    </>
+          <p>FOOD PRICE</p>
+          <input
+            className="food-price"
+            type="text"
+            placeholder=" Enter Food Price Here"
+            onChange={(e) => setPrice(e.target.value)}
+            value={price}
+          />
+          <p>FOOD DESCRIPTION</p>
+          <textarea
+            className="food-desc"
+            placeholder=" Enter Food Description Here"
+            onChange={(e) => setDesc(e.target.value)}
+            value={desc}
+          />
+
+          <p>FOOD INGREDIENT</p>
+          <textarea
+            className="food-ingre"
+            placeholder=" Enter Food Ingredient Here"
+            onChange={(e) => setIngre(e.target.value)}
+            value={ingre}
+          />
+        </div>
+
+        <div className="admin-form-right">
+          <div className="image-upload">
+            <h4>FOOD IMAGE</h4>
+            <p>Here you can upload image of your menu or food.</p>
+            <div className="image-upload-list">
+              <img src={imageurl} alt="" />
+              <h3>{imagename}</h3>
+            </div>
+            <div className="file-wrap">
+              <span className="file-text"> UPLOAD IMAGE </span>
+              <input type="file" onChange={(e) => formControl(e)} />
+            </div>
+            <p>
+              {" "}
+              <span style={{ color: "#d85d44" }}>Note!</span>
+              <br />
+              image can be upload by any dimension but we recommend you to
+              upload image with dimension of 1024x1024. Its size must be less
+              than 10mb.
+            </p>
+          </div>
+          <div
+            style={{
+              width: "100%",
+              height: "20px",
+              backgroundColor: "#f4eee1",
+              marginTop: "2px",
+              zIndex: "2000",
+            }}
+          ></div>
+
+          <div className="warning">
+            <h4>Notice</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus, error debitis adipisci laboriosam voluptates quam
+              sapiente ullam. Unde, illum. Similique rem dolorum est quod
+              repellendus atque pariatur at nisi enim?
+            </p>
+          </div>
+        </div>
+      </div>
+      <button className="btn-file-submit" onClick={() => addDataFun()}>
+        submit
+      </button>
+      <Footer />
+    </div>
   );
 };
 

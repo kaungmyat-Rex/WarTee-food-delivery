@@ -5,6 +5,7 @@ import Navbar from "../component/Navbar";
 import { BsChatRightQuoteFill } from "react-icons/bs";
 import { BsPersonCircle } from "react-icons/bs";
 import Footer from "../component/Footer";
+import { Burmese } from "../component/Burmese";
 interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
@@ -34,7 +35,9 @@ const About = ({
       <div className="about-section-main">
         <div className="about-main-boder">
           <div className="about-main-body">
-            <h3 className="about-title">About Us</h3>
+            <h3 className="about-title">
+              {language ? Burmese[0].menuList3 : "About Us"}
+            </h3>
             <div className="about-bar"></div>
             <p className="about-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
@@ -49,7 +52,7 @@ const About = ({
         </div>
       </div>
       <div className="testi-section-title">
-        <h3>THEY TRUST US</h3>
+        <h3>{language ? Burmese[0].aboutText1 : "THEY TRUST US"}</h3>
       </div>
       <div className="testi-section-main">
         <div className="testi-section-body">

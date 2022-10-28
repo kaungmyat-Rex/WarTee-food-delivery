@@ -223,14 +223,13 @@ const Home = ({
 
       <div className="section-guide-main">
         <div className="section-guide-boder">
-          <img src={pointer} className="pointer1" alt="" />
-          <img src={pointer2} className="pointer2" alt="" />
           <div className="section-guide-list">
             <h4 className="guide-title-main">
               {language ? Burmese[0].title3 : "HOW IT'S WORK"}
             </h4>
 
             <div className="guide-one">
+              <img src={pointer} className="pointer1" alt="" />
               <p className="guide-title-one">
                 Step <span style={{ color: "#ffb259" }}>One</span>
               </p>
@@ -243,6 +242,7 @@ const Home = ({
             </div>
             <div className="guide-bar"></div>
             <div className="guide-two">
+              <img src={pointer2} className="pointer2" alt="" />
               <p className="guide-title-two">
                 Step <span style={{ color: "#589873" }}>Two</span>
               </p>
