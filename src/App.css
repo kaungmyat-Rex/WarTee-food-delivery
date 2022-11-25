@@ -2884,6 +2884,10 @@ media  query and responsive
   .single-desIng-boder {
     width: 90%;
   }
+
+  /* .language-hide{
+    visibility: hidden;
+  } */
 }
 
 @media only screen and (max-width: 866px) and (min-width: 675px) {
@@ -4369,5 +4373,9 @@ media  query and responsive
 
   .search-box-main {
     right: 20px;
+  }
+
+  .language-hide {
+    display: none;
   }
 }

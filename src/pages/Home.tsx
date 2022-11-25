@@ -75,7 +75,7 @@ const Home = ({
               <p className="text-itemPrice">
                 {language ? Burmese[0].priceBm1 : "2500 Ks"}
               </p>
-              <button className="button-3">
+              <button className="button-3" onClick={() => navigate("/menu")}>
                 {" "}
                 <span>{language ? Burmese[0].buttonBm : "Order Now"}</span>
               </button>
@@ -96,7 +96,10 @@ const Home = ({
               <p className="text-itemPrice-two">
                 {language ? Burmese[0].priceBm2 : "1500 Ks"}
               </p>
-              <button className="button-3-two">
+              <button
+                className="button-3-two"
+                onClick={() => navigate("/menu")}
+              >
                 {" "}
                 <span>{language ? Burmese[0].buttonBm : "Order Now"}</span>
               </button>
@@ -117,7 +120,10 @@ const Home = ({
               <p className="text-itemPrice-three">
                 {language ? Burmese[0].priceBm3 : "6000 Ks"}
               </p>
-              <button className="button-3-three">
+              <button
+                className="button-3-three"
+                onClick={() => navigate("/menu")}
+              >
                 {" "}
                 <span>{language ? Burmese[0].buttonBm : "Order Now"}</span>
               </button>

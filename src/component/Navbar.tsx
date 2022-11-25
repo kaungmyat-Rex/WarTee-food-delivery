@@ -335,8 +335,7 @@ const Navbar = ({
             </li>
             <li>
               <div
-                className="language"
-                style={searchActive ? { display: "none" } : {}}
+                className={`language ${searchActive ? "language-hide" : ""}`}
               >
                 <div
                   className={`english ${language ? "english-hide" : ""}`}

@@ -11,16 +11,32 @@ import Addproduct from "./pages/Addprodect";
 import axios from "axios";
 import Single from "./pages/Single";
 import AddtoCart from "./pages/AddtoCart";
+import Dashboard from "./pages/Dashboard";
+import OrderList from "./pages/OrderList";
+import ProductList from "./pages/ProductList";
+import EditProduct from "./pages/EditProduct";
+
 function App() {
   const [language, setLanguage] = useState<boolean>(false);
   const [addNoti, setAddNoti] = useState<boolean>(false);
   const [productData, setProductData] = useState<any>([]);
   const [addtocartList, setAddtocartList] = useState<[]>([]);
+  const [uploadcheck, setUploadcheck] = useState(false);
+  const [checkerror, setCheckerror] = useState(false);
+  const [checkimg, setCheckimg] = useState(false);
+  const [orderData, setOrderData] = useState([]);
+  const [delCheck, setDelCheck] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/getmenu").then((res) => {
+    axios.get("https://wartee-server.onrender.com/getmenu").then((res) => {
       setProductData(res.data);
     });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("https://wartee-server.onrender.com/admin/orders")
+      .then((res) => setOrderData(res.data));
   }, []);
 
   return (
@@ -103,6 +119,13 @@ function App() {
                 setAddtocartList={setAddtocartList}
                 addtocartList={addtocartList}
                 addNoti={addNoti}
+                uploadcheck={uploadcheck}
+                setUploadcheck={setUploadcheck}
+                checkerror={checkerror}
+                setCheckerror={setCheckerror}
+                checkimg={checkimg}
+                setCheckimg={setCheckimg}
+                delCheck={delCheck}
               />
             }
           />
@@ -116,6 +139,60 @@ function App() {
                 setAddtocartList={setAddtocartList}
                 addtocartList={addtocartList}
                 addNoti={addNoti}
+              />
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <Dashboard
+                uploadcheck={uploadcheck}
+                checkerror={checkerror}
+                checkimg={checkimg}
+                productData={productData}
+                orderData={orderData}
+                delCheck={delCheck}
+              />
+            }
+          />
+
+          <Route
+            path="/orderlist"
+            element={
+              <OrderList
+                uploadcheck={uploadcheck}
+                checkerror={checkerror}
+                checkimg={checkimg}
+                productData={productData}
+                orderData={orderData}
+                delCheck={delCheck}
+              />
+            }
+          />
+          <Route
+            path="/productlist"
+            element={
+              <ProductList
+                uploadcheck={uploadcheck}
+                checkerror={checkerror}
+                checkimg={checkimg}
+                productData={productData}
+                orderData={orderData}
+                delCheck={delCheck}
+                setDelCheck={setDelCheck}
+              />
+            }
+          />
+          <Route
+            path="/editproduct/:id"
+            element={
+              <EditProduct
+                uploadcheck={uploadcheck}
+                checkerror={checkerror}
+                checkimg={checkimg}
+                productData={productData}
+                orderData={orderData}
+                delCheck={delCheck}
               />
             }
           />

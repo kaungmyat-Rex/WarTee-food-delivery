@@ -3,6 +3,8 @@ import Navbar from "../component/Navbar";
 import { AiOutlineClose } from "react-icons/ai";
 import { RiErrorWarningLine } from "react-icons/ri";
 import Footer from "../component/Footer";
+import axios from "axios";
+
 interface props {
   language: boolean;
   setLanguage: (data: boolean) => void;
@@ -30,6 +32,10 @@ const AddtoCart = ({
   const [selectCity, setSelectCity] = useState(options[0].value);
   const [totalfoodprice, setTotalfoodprice] = useState<number>(0);
   const [addtocartcheck, setAddtocartcheck] = useState<boolean>(false);
+  const [kname, setKname] = useState("");
+  const [kphone, setKphone] = useState("");
+  const [kslip, setKslip] = useState("");
+  const [test, setTest] = useState([]);
 
   const DeleteFoodListFun = (id: string): void => {
     const deletefood = addtocartList.filter((e: any) => e.id !== id);
@@ -48,6 +54,30 @@ const AddtoCart = ({
       .reduce((total, currentvalue) => (total = total + currentvalue), 0);
     setTotalfoodprice(Totalprice);
   }, [addtocartList]);
+
+  const CreateOrder = async () => {
+    if (addtocartList.length === 0) {
+      alert("You Can't Create Your Order With Empty List");
+    } else if (kname === "") {
+      alert("You Can't Create Your Order With Empty Kpay Name");
+    } else if (kphone === "") {
+      alert("You Can't Create Your Order With Empty Kpay Phone Number");
+    } else if (kslip === "") {
+      alert("You Can't Create Your Order With Empty Kpay Slip");
+    } else {
+      const foodname = addtocartList.map((e: any) => e.name);
+      const foodcount = addtocartList.map((e: any) => e.count);
+
+      await axios.post("https://wartee-server.onrender.com/admin/crateorder", {
+        KBZph: kphone,
+        KBZname: kname,
+        KBZpayslip: kslip,
+        orderItemName: { foodname: foodname, foodcount: foodcount },
+        totalfoodprice: totalfoodprice,
+        address: selectCity,
+      });
+    }
+  };
 
   return (
     <>
@@ -143,16 +173,28 @@ const AddtoCart = ({
               <div className="checkout-input-numberandname">
                 <div className="input-KpayNumber">
                   <p>YOUR KBZPAY NUMBER</p>
-                  <input type="text" />
+                  <input
+                    type="text"
+                    value={kphone}
+                    onChange={(e: any) => setKphone(e.target.value)}
+                  />
                 </div>
                 <div className="input-KpayName">
                   <p>YOUR KBZPAY NAME</p>
-                  <input type="text" />
+                  <input
+                    type="text"
+                    value={kname}
+                    onChange={(e) => setKname(e.target.value)}
+                  />
                 </div>
               </div>
               <div className="input-Kpayslip">
                 <p>KBZPAY SLIP CODE</p>
-                <input type="text" />
+                <input
+                  type="text"
+                  value={kslip}
+                  onChange={(e: any) => setKslip(e.target.value)}
+                />
               </div>
               <div className="input-sel-city">
                 <p>SELECT YOUR CITY</p>
@@ -166,7 +208,12 @@ const AddtoCart = ({
                 </select>
               </div>
 
-              <button className="checkout-btn-main">CHECKOUT</button>
+              <button
+                className="checkout-btn-main"
+                onClick={() => CreateOrder()}
+              >
+                CHECKOUT
+              </button>
             </div>
           </div>
         </div>

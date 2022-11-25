@@ -16,6 +16,13 @@ interface props {
   setAddtocartList: any;
   addtocartList: any;
   addNoti: boolean;
+  uploadcheck: boolean;
+  setUploadcheck: any;
+  checkerror: boolean;
+  setCheckerror: any;
+  checkimg: boolean;
+  setCheckimg: any;
+  delCheck: boolean;
 }
 const Addproduct = ({
   language,
@@ -24,6 +31,13 @@ const Addproduct = ({
   setAddtocartList,
   addtocartList,
   addNoti,
+  uploadcheck,
+  setUploadcheck,
+  checkerror,
+  setCheckerror,
+  checkimg,
+  setCheckimg,
+  delCheck,
 }: props) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -36,35 +50,55 @@ const Addproduct = ({
   const [imageurl, setImageurl] = useState(def);
 
   const addDataFun = async () => {
-    const imgref = ref(storage, `storeImg/${imagestore.name + Date.now()}`);
+    const errorcheck = () => {
+      setTimeout(() => setCheckerror(false), 3000);
+    };
 
-    await uploadBytes(imgref, imagestore).then(() => {
-      getDownloadURL(imgref).then((url) => {
-        axios
-          .post("http://localhost:3001/createmenu", {
-            typeFood: name,
-            price: price,
-            imageLink: url,
-            desc: desc,
-            ingre: ingre,
-          })
-          .then(() => {
-            alert("file upload success");
-          })
-          .catch((err) => console.log(err));
+    const errorimgcheck = () => {
+      setTimeout(() => setCheckimg(false), 3000);
+    };
+    if (name === "" || price === "" || desc === "") {
+      setCheckerror(true);
+      errorcheck();
+    } else if (imagestore === null) {
+      setCheckimg(true);
+      errorimgcheck();
+    } else {
+      const imgref = ref(storage, `storeImg/${imagestore.name + Date.now()}`);
+
+      const btd = () => {
+        setTimeout(() => setUploadcheck(false), 3000);
+      };
+
+      await uploadBytes(imgref, imagestore).then(() => {
+        getDownloadURL(imgref).then((url) => {
+          axios
+            .post("https://wartee-server.onrender.com/createmenu", {
+              typeFood: name,
+              price: price,
+              imageLink: url,
+              desc: desc,
+              ingre: ingre,
+            })
+            .then(() => {
+              setUploadcheck(true);
+              btd();
+            })
+            .catch((err) => console.log(err));
+        });
       });
-    });
 
-    // await axios
-    //   .post("http://localhost:3001/createmenu", {
-    //     typeFood: name,
-    //     price: price,
-    //     imageLink: linkimage,
-    //   })
-    //   .then(() => {
-    //     alert("file upload success");
-    //   })
-    //   .catch((err) => console.log(err));
+      // await axios
+      //   .post("http://localhost:3001/createmenu", {
+      //     typeFood: name,
+      //     price: price,
+      //     imageLink: linkimage,
+      //   })
+      //   .then(() => {
+      //     alert("file upload success");
+      //   })
+      //   .catch((err) => console.log(err));
+    }
   };
 
   const formControl = (e: any) => {
@@ -75,7 +109,12 @@ const Addproduct = ({
 
   return (
     <div style={{ backgroundColor: "#f4eee1" }}>
-      <AdminNav />
+      <AdminNav
+        uploadcheck={uploadcheck}
+        checkerror={checkerror}
+        checkimg={checkimg}
+        delCheck={delCheck}
+      />
       <div className="admin-addproduct-title">
         <h4>Add Foods</h4>
         <p>Here your can add foods to your menu.</p>
@@ -92,6 +131,7 @@ const Addproduct = ({
             placeholder=" Enter Food Name Here"
             onChange={(e) => setName(e.target.value)}
             value={name}
+            style={checkerror ? { border: "2px solid red" } : {}}
           />
 
           <p>FOOD PRICE</p>
@@ -101,6 +141,7 @@ const Addproduct = ({
             placeholder=" Enter Food Price Here"
             onChange={(e) => setPrice(e.target.value)}
             value={price}
+            style={checkerror ? { border: "2px solid red" } : {}}
           />
           <p>FOOD DESCRIPTION</p>
           <textarea
