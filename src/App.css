@@ -2721,6 +2721,61 @@ add to cart page
   display: none;
 }
 
+/* ------ loading animation -------*/
+
+.loading-animation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 100px 0px;
+}
+
+.loading-animation p {
+  position: absolute;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  top: 100px;
+  left: -50px;
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+}
+.spinner .path {
+  stroke: #d85d44;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
 /* ----------------------
 
 

@@ -26,9 +26,11 @@ function App() {
   const [checkimg, setCheckimg] = useState(false);
   const [orderData, setOrderData] = useState([]);
   const [delCheck, setDelCheck] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios.get("https://wartee-server.onrender.com/getmenu").then((res) => {
+      setLoading(false);
       setProductData(res.data);
     });
   }, []);
@@ -53,6 +55,7 @@ function App() {
                 setAddtocartList={setAddtocartList}
                 addtocartList={addtocartList}
                 addNoti={addNoti}
+                loading={loading}
               />
             }
           />

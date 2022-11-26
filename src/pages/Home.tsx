@@ -23,6 +23,7 @@ import pointer2 from "../img/pointer2.png";
 import Footer from "../component/Footer";
 import { Burmese } from "../component/Burmese";
 import { useNavigate, Link } from "react-router-dom";
+import Loading from "../component/Loading";
 
 interface props {
   language: boolean;
@@ -31,6 +32,7 @@ interface props {
   setAddtocartList: any;
   addtocartList: any;
   addNoti: boolean;
+  loading: boolean;
 }
 
 const Home = ({
@@ -40,6 +42,7 @@ const Home = ({
   setAddtocartList,
   addtocartList,
   addNoti,
+  loading,
 }: props) => {
   const navigate = useNavigate();
   return (
@@ -144,28 +147,32 @@ const Home = ({
           </div>
           <div className="section-product-main">
             <div className="product-list">
-              {productData.slice(-4).map((e: any) => (
-                <div
-                  className="product-main"
-                  key={e._id}
-                  onClick={() => navigate(`/menu/${e._id}`)}
-                >
-                  <img className="product-img" src={e.imageLink} alt="" />
-                  <img className="logoimg" src={logo} alt="" />
-                  <div className="product-info">
-                    <div className="product-text">
-                      <p className="pd-name">{e.typeFood}</p>
-                      <p className="pd-price">{e.price} Ks</p>
-                    </div>
-                    <div className="pd-add">
-                      <BiShoppingBag
-                        className="pd-add-icon"
-                        onClick={() => navigate(`/menu/${e._id}`)}
-                      />
+              {loading ? (
+                <Loading />
+              ) : (
+                productData.slice(-4).map((e: any) => (
+                  <div
+                    className="product-main"
+                    key={e._id}
+                    onClick={() => navigate(`/menu/${e._id}`)}
+                  >
+                    <img className="product-img" src={e.imageLink} alt="" />
+                    <img className="logoimg" src={logo} alt="" />
+                    <div className="product-info">
+                      <div className="product-text">
+                        <p className="pd-name">{e.typeFood}</p>
+                        <p className="pd-price">{e.price} Ks</p>
+                      </div>
+                      <div className="pd-add">
+                        <BiShoppingBag
+                          className="pd-add-icon"
+                          onClick={() => navigate(`/menu/${e._id}`)}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
         </div>
