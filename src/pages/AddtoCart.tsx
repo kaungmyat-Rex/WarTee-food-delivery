@@ -4,6 +4,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import { RiErrorWarningLine } from "react-icons/ri";
 import Footer from "../component/Footer";
 import axios from "axios";
+import Checkoutmodel from "../component/CheckoutModel";
+import Loading from "../component/Loading";
 
 interface props {
   language: boolean;
@@ -22,6 +24,9 @@ const AddtoCart = ({
   addtocartList,
   addNoti,
 }: props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const options = [
     { value: "", text: "" },
     { value: "san chaung", text: "San Chaung" },
@@ -36,6 +41,8 @@ const AddtoCart = ({
   const [kphone, setKphone] = useState("");
   const [kslip, setKslip] = useState("");
   const [test, setTest] = useState([]);
+  const [opencheckmodel, setOpencheckmodel] = useState(false);
+  const [loadingcheck, setLoadingcheck] = useState(false);
 
   const DeleteFoodListFun = (id: string): void => {
     const deletefood = addtocartList.filter((e: any) => e.id !== id);
@@ -65,22 +72,39 @@ const AddtoCart = ({
     } else if (kslip === "") {
       alert("You Can't Create Your Order With Empty Kpay Slip");
     } else {
+      setLoadingcheck(true);
       const foodname = addtocartList.map((e: any) => e.name);
       const foodcount = addtocartList.map((e: any) => e.count);
 
-      await axios.post("https://wartee-server.onrender.com/admin/crateorder", {
-        KBZph: kphone,
-        KBZname: kname,
-        KBZpayslip: kslip,
-        orderItemName: { foodname: foodname, foodcount: foodcount },
-        totalfoodprice: totalfoodprice,
-        address: selectCity,
-      });
+      await axios
+        .post("https://wartee-server.onrender.com/admin/crateorder", {
+          KBZph: kphone,
+          KBZname: kname,
+          KBZpayslip: kslip,
+          orderItemName: { foodname: foodname, foodcount: foodcount },
+          totalfoodprice: totalfoodprice,
+          address: selectCity,
+        })
+        .then(() => {
+          setLoadingcheck(false);
+          setOpencheckmodel(true);
+        });
     }
   };
 
   return (
     <>
+      <div
+        className={`loadingCheck ${loadingcheck ? "loadingcheck-show" : ""}`}
+      >
+        <div className="loadingcheck-body">
+          <Loading />
+        </div>
+      </div>
+      <Checkoutmodel
+        opencheckmodel={opencheckmodel}
+        setOpencheckmodel={setOpencheckmodel}
+      />
       <Navbar
         language={language}
         setLanguage={setLanguage}

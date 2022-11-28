@@ -34,6 +34,10 @@ const Menu = ({
   const navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (menusearchinput === "") {
       setinputmenuCheck(false);
     } else {

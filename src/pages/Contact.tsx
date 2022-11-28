@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Navbar from "../component/Navbar";
 import { ImQuotesLeft } from "react-icons/im";
@@ -27,6 +27,9 @@ const Contact = ({
   addtocartList,
   addNoti,
 }: props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={{ backgroundColor: "#f4eee1" }}>
       <Navbar

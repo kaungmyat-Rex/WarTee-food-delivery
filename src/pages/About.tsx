@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../component/Navbar";
 
 // import { BsChatRightQuote } from "react-icons/bs";
@@ -22,6 +22,9 @@ const About = ({
   addtocartList,
   addNoti,
 }: props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="about-section">
       <Navbar
