@@ -73,7 +73,7 @@ const Addproduct = ({
       await uploadBytes(imgref, imagestore).then(() => {
         getDownloadURL(imgref).then((url) => {
           axios
-            .post("https://wartee-server.onrender.com/createmenu", {
+            .post("https://encouraging-pink-pullover.cyclic.app/createmenu", {
               typeFood: name,
               price: price,
               imageLink: url,

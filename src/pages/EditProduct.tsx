@@ -56,7 +56,7 @@ const EditProduct = ({
 
   const editfun = () => {
     axios
-      .patch(`https://wartee-server.onrender.com/edit/${id}`, {
+      .patch(`https://encouraging-pink-pullover.cyclic.app/edit/${id}`, {
         typeFood: editname,
         price: editprice,
         imageLink: editimage,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import { BiShoppingBag } from "react-icons/bi";
@@ -32,6 +32,10 @@ const Single = ({
 
   const { id } = useParams();
   const filter = productData.filter((e: any) => e._id === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const minusCount = () => {
     if (countItem === 1) {

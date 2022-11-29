@@ -29,15 +29,17 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("https://wartee-server.onrender.com/getmenu").then((res) => {
-      setLoading(false);
-      setProductData(res.data);
-    });
+    axios
+      .get("https://encouraging-pink-pullover.cyclic.app/getmenu")
+      .then((res) => {
+        setLoading(false);
+        setProductData(res.data);
+      });
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://wartee-server.onrender.com/admin/orders")
+      .get("https://encouraging-pink-pullover.cyclic.app/admin/orders")
       .then((res) => setOrderData(res.data));
   }, []);
 

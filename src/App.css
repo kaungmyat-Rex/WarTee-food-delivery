@@ -3837,6 +3837,10 @@ media  query and responsive
   }
 
   /* single-page */
+
+  .single-section-main {
+    padding-top: 80px;
+  }
   .single-body-main {
     flex-direction: column;
   }
@@ -3858,6 +3862,7 @@ media  query and responsive
     width: 100%;
   }
   /* add-to-cart-page */
+
   .cart-section-main {
     padding-top: 120px;
   }
@@ -3894,6 +3899,16 @@ media  query and responsive
   }
   .input-sel-city select {
     width: 420px;
+  }
+
+  /* infomodel */
+
+  .section-infomodel-boder {
+    width: 50%;
+  }
+
+  .section-checkmodel-boder {
+    width: 80%;
   }
 }
 
@@ -4454,6 +4469,9 @@ media  query and responsive
   }
 
   /* single-page */
+  .single-section-main {
+    padding-top: 80px;
+  }
   .single-body-main {
     flex-direction: column;
   }
@@ -4562,5 +4580,15 @@ media  query and responsive
 
   .language-hide {
     display: none;
+  }
+
+  /* infomodel */
+  .section-infomodel-boder {
+    width: 80%;
+  }
+
+  /* checkmodel */
+  .section-checkmodel-boder {
+    width: 80%;
   }
 }

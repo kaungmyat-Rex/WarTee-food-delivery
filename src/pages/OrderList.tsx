@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AdminNav from "../component/AdminNav";
 import { BiSearchAlt } from "react-icons/bi";
+import axios from "axios";
 interface props {
   uploadcheck: boolean;
   checkerror: boolean;
@@ -33,6 +34,15 @@ const OrderList = ({
     }
   }, [orderinput]);
   console.log(fiterorderdata);
+
+  const deleteorder = async (id: any) => {
+    await axios
+      .delete(`https://encouraging-pink-pullover.cyclic.app/admin/delete/${id}`)
+      .then(() => {
+        alert("item delete success");
+        window.location.reload();
+      });
+  };
   return (
     <div>
       <AdminNav
@@ -125,7 +135,12 @@ const OrderList = ({
                         </td>
                         <td>{e.address}</td>
                         <td>
-                          <button className="inputorder-btn">Finish</button>
+                          <button
+                            className="inputorder-btn"
+                            onClick={() => deleteorder(e._id)}
+                          >
+                            Finish
+                          </button>
                         </td>
                       </tr>
                     ))
@@ -172,7 +187,12 @@ const OrderList = ({
                       </td>
                       <td style={{ color: "#8d8d8d" }}>{e.address}</td>
                       <td>
-                        <button className="inputorder-btn">Finish</button>
+                        <button
+                          className="inputorder-btn"
+                          onClick={() => deleteorder(e._id)}
+                        >
+                          Finish
+                        </button>
                       </td>
                     </tr>
                   ))}

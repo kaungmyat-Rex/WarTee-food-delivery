@@ -58,7 +58,7 @@ const ProductList = ({
     const desertRef = ref(storage, imageLink[0]);
     await deleteObject(desertRef).then(() => {
       axios
-        .delete(`https://wartee-server.onrender.com/delete/${id}`)
+        .delete(`https://encouraging-pink-pullover.cyclic.app/delete/${id}`)
         .then(() => {
           setDelCheck(true);
           timeout();

@@ -77,7 +77,7 @@ const AddtoCart = ({
       const foodcount = addtocartList.map((e: any) => e.count);
 
       await axios
-        .post("https://wartee-server.onrender.com/admin/crateorder", {
+        .post("https://encouraging-pink-pullover.cyclic.app/admin/crateorder", {
           KBZph: kphone,
           KBZname: kname,
           KBZpayslip: kslip,
