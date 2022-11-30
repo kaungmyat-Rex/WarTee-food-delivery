@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AdminNav from "../component/AdminNav";
 import { BiSearchAlt } from "react-icons/bi";
 import axios from "axios";
+import Footer from "../component/Footer";
 interface props {
   uploadcheck: boolean;
   checkerror: boolean;
@@ -199,6 +200,9 @@ const OrderList = ({
             </tbody>
           </table>
         </div>
+      </div>
+      <div style={{ paddingTop: "50px" }}>
+        <Footer />
       </div>
     </div>
   );
