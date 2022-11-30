@@ -58,7 +58,7 @@ const ProductList = ({
     const desertRef = ref(storage, imageLink[0]);
     await deleteObject(desertRef).then(() => {
       axios
-        .delete(`https://encouraging-pink-pullover.cyclic.app/delete/${id}`)
+        .delete(`https://${process.env.REACT_APP_API_LINK}/delete/${id}`)
         .then(() => {
           setDelCheck(true);
           timeout();

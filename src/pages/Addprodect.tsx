@@ -73,7 +73,7 @@ const Addproduct = ({
       await uploadBytes(imgref, imagestore).then(() => {
         getDownloadURL(imgref).then((url) => {
           axios
-            .post("https://encouraging-pink-pullover.cyclic.app/createmenu", {
+            .post(`https://${process.env.REACT_APP_API_LINK}/createmenu`, {
               typeFood: name,
               price: price,
               imageLink: url,

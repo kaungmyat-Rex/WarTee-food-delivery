@@ -15,6 +15,7 @@ import Dashboard from "./pages/Dashboard";
 import OrderList from "./pages/OrderList";
 import ProductList from "./pages/ProductList";
 import EditProduct from "./pages/EditProduct";
+import dotenv from "dotenv";
 
 function App() {
   const [language, setLanguage] = useState<boolean>(false);
@@ -30,7 +31,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://encouraging-pink-pullover.cyclic.app/getmenu")
+      .get(`https://${process.env.REACT_APP_API_LINK}/getmenu`)
       .then((res) => {
         setLoading(false);
         setProductData(res.data);

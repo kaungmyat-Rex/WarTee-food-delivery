@@ -56,7 +56,7 @@ const EditProduct = ({
 
   const editfun = () => {
     axios
-      .patch(`https://encouraging-pink-pullover.cyclic.app/edit/${id}`, {
+      .patch(`https://${process.env.REACT_APP_API_LINK}/edit/${id}`, {
         typeFood: editname,
         price: editprice,
         imageLink: editimage,
