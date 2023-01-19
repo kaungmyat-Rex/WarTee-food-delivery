@@ -4592,3 +4592,141 @@ media  query and responsive
     width: 80%;
   }
 }
+
+/* ---------  login page  --------  */
+
+.login-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(244, 238, 225);
+  width: 100%;
+  height: 100vh;
+}
+
+.login-border {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.login-border h3 {
+  color: #3d1d15;
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.username-div {
+  border-top: 1px solid rgb(182, 182, 182);
+}
+
+.username-div,
+.password-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.username-div h3 {
+  font-size: 15px;
+  color: #3d1d15;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+  margin-left: -215px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.username-div input {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #7f7b7b;
+  font-size: 15px;
+  color: #3d1d15;
+  font-weight: 600;
+}
+
+.password-div h3 {
+  font-size: 15px;
+  color: #3d1d15;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+  margin-left: -190px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.password-div input {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #7f7b7b;
+  font-size: 15px;
+  color: #3d1d15;
+  font-weight: 600;
+}
+
+.login-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.login-btn {
+  cursor: pointer;
+  background-color: #d85d44;
+  width: 260px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-family: "Lexend Tera", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.login-btn:hover {
+  background-color: #983e2c;
+}
+
+.login-bar {
+  margin-top: 30px;
+  width: 100px;
+  height: 1px;
+  background-color: rgb(182, 182, 182);
+}
+
+.login-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-error p {
+  color: rgb(109, 109, 109);
+}
+
+.login-warning-block {
+  display: none;
+}
+
+.login-warning {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+
+.login-warn-show {
+  display: block;
+}

@@ -35,7 +35,7 @@ const Dashboard = ({
   //   setOrdertest(testtwo);
   // }, [test]);
 
-  console.log(orderData.map((e: any) => e._id));
+  // console.log(orderData.map((e: any) => e._id));
 
   const date = new Date();
 
@@ -102,7 +102,7 @@ const Dashboard = ({
             <tbody>
               <tr>
                 <th>Customer</th>
-                <th>Phone</th>
+                <th className="table-phone-title">Phone</th>
 
                 <th>Orders</th>
                 <th>Price</th>
@@ -110,8 +110,13 @@ const Dashboard = ({
 
               {orderData.slice(-5).map((e: any) => (
                 <tr key={e._id}>
-                  <td style={{ color: "#d85d44" }}>{e.KBZname}</td>
-                  <td>0{e.KBZph}</td>
+                  <td
+                    className="table-customer-name"
+                    // style={{ color: "#d85d44" }}
+                  >
+                    {e.KBZname}
+                  </td>
+                  <td className="table-phone">0{e.KBZph}</td>
                   {e.orderItemName.map((e: any) => (
                     <div
                       style={{
@@ -143,16 +148,14 @@ const Dashboard = ({
                       </td>
                     </div>
                   ))}
-                  <td style={{ color: "rgb(88, 152, 115)" }}>
-                    {e.totalfoodprice} KS
-                  </td>
+                  <td style={{ color: "#d85d44" }}>{e.totalfoodprice} KS</td>
                 </tr>
               ))}
             </tbody>
           </table>
           <button
             className="admin-dash-btn"
-            onClick={() => navigate("/orderlist")}
+            onClick={() => navigate("/login/orderlist")}
           >
             View All Orders
           </button>
@@ -183,7 +186,7 @@ const Dashboard = ({
           </table>
           <div
             className="seemore-admin-btn"
-            onClick={() => navigate("/productlist")}
+            onClick={() => navigate("/login/productlist")}
           >
             <p>See More Foods</p>
           </div>

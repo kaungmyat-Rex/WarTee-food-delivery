@@ -710,6 +710,7 @@ input[type="file"] {
 #admins-orderlist-table th {
   border-bottom: 1px solid rgb(200, 199, 199);
   padding: 8px;
+
   font-size: 15px;
   font-weight: 600;
 }
@@ -902,4 +903,393 @@ product list page
 .button-34:hover {
   background-color: #3d1d15;
   transition: 300ms;
+}
+
+.admin-nav-ham {
+  display: none;
+}
+.section-navside {
+  display: none;
+}
+
+@media only screen and (max-width: 1005px) and (min-width: 100px) {
+  .admin-nav-navigation {
+    display: none;
+  }
+
+  .admin-nav-ham {
+    display: block;
+    margin-right: 20px;
+  }
+  .admin-icon-nav-ham {
+    color: white;
+    font-size: 26px;
+  }
+
+  .section-navside {
+    display: none;
+  }
+  .section-navside-show {
+    display: block;
+  }
+
+  .admin-navside-main {
+    width: 100%;
+    height: 100%;
+    z-index: 3000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    backdrop-filter: grayscale(100%) blur(2px) brightness(20%);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .admin-navside-border {
+    position: relative;
+    width: 230px;
+    height: 100vh;
+    background-color: rgb(244, 238, 225);
+  }
+
+  .admin-navside-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .admin-sidenav-text {
+    color: #3d1d15;
+    cursor: pointer;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .admin-nav-sideIcon {
+    font-size: 25px;
+    padding: 0px 13px 0px 13px;
+  }
+
+  .close-navside-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 40px;
+    color: #3d1d15;
+  }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 906px) {
+  .admin-dboard-border {
+    width: 90%;
+  }
+
+  .admin-widget-main {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  .admin-widget-one {
+    width: auto;
+    height: auto;
+  }
+
+  .widget-icon1,
+  .widget-icon2,
+  .widget-icon3,
+  .widget-icon4 {
+    font-size: 45px;
+    padding: 13px;
+  }
+  .admin-widget-info {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .admin-widget-info h4 {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .admin-widget-info p {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .admin-form-left {
+    flex: 6;
+  }
+
+  .admin-form-left input {
+    width: 400px;
+  }
+
+  .admin-form-left textarea {
+    width: 400px;
+  }
+
+  .admin-form-right {
+    flex: 5;
+  }
+}
+
+@media only screen and (max-width: 906px) and (min-width: 650px) {
+  .admin-dboard-border {
+    width: 95%;
+  }
+
+  .admin-widget-main {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .admin-widget-one,
+  .admin-widget-two,
+  .admin-widget-three,
+  .admin-widget-four {
+    width: auto;
+    height: auto;
+    margin: 0px 20px 20px 0px;
+  }
+
+  .widget-icon1,
+  .widget-icon2,
+  .widget-icon3,
+  .widget-icon4 {
+    font-size: 45px;
+    padding: 13px;
+  }
+  .admin-widget-info {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .admin-widget-info h4 {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .admin-widget-info p {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .section-dashboard-main {
+    flex-direction: column;
+  }
+
+  #admins-table {
+    margin-bottom: 75px;
+  }
+
+  .admin-dash-btn {
+    left: 0px;
+    right: 0px;
+  }
+  .admin-addproduct-form-main {
+    flex-direction: column;
+  }
+
+  .admin-form-left input {
+    max-width: 500px;
+  }
+  .admin-form-right input {
+    max-width: 500px;
+  }
+  .admin-form-left textarea {
+    max-width: 500px;
+  }
+  .admin-form-right textarea {
+    max-width: 500px;
+  }
+
+  .admins-order-phonepage-title {
+    display: none;
+  }
+  .admins-order-kpaypage-title {
+    display: none;
+  }
+  .admins-order-address-title {
+    display: none;
+  }
+  .admins-order-phonepage {
+    display: none;
+  }
+  .admins-order-kpaypage {
+    display: none;
+  }
+  .admins-order-adress {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 650px) and (min-width: 350px) {
+  .admin-dboard-border {
+    width: 100%;
+  }
+
+  .admin-widget-main {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .admin-widget-one,
+  .admin-widget-two,
+  .admin-widget-three,
+  .admin-widget-four {
+    width: auto;
+    height: auto;
+    margin: 0px 15px 15px 0px;
+  }
+
+  .widget-icon1,
+  .widget-icon2,
+  .widget-icon3,
+  .widget-icon4 {
+    font-size: 45px;
+    padding: 13px;
+  }
+  .admin-widget-info {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .admin-widget-info h4 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 13px;
+  }
+
+  .admin-widget-info p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+  }
+
+  .section-dashboard-main {
+    flex-direction: column;
+  }
+
+  #admins-table {
+    margin-bottom: 75px;
+  }
+
+  .admin-dash-btn {
+    left: 0px;
+    right: 0px;
+  }
+
+  .section-dashboard-table {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  #admins-table {
+    width: 100%;
+  }
+
+  #admins-table td {
+    font-size: 13px;
+  }
+  .table-phone-title {
+    display: none;
+  }
+
+  .table-phone {
+    display: none;
+  }
+  .admin-addproduct-form-main {
+    flex-direction: column;
+  }
+
+  .admin-form-left {
+    margin: 10px;
+  }
+
+  .admin-form-left input {
+    margin-left: 10px;
+    max-width: 330px;
+  }
+
+  .admin-form-left textarea {
+    margin-left: 10px;
+    max-width: 330px;
+  }
+  .admin-form-right textarea {
+    max-width: 500px;
+  }
+
+  .admin-form-left h4 {
+    padding-left: 10px;
+  }
+  .admin-form-left p {
+    margin-left: 10px;
+  }
+
+  .admin-form-right {
+    margin: 10px 10px 10px 10px;
+  }
+
+  .btn-file-submit {
+    margin-left: 90px;
+  }
+  .input-search-orderlist input {
+    width: 320px;
+  }
+
+  .admins-order-phonepage-title {
+    display: none;
+  }
+  .admins-order-kpaypage-title {
+    display: none;
+  }
+  .admins-order-address-title {
+    display: none;
+  }
+  .admins-order-phonepage {
+    display: none;
+  }
+  .admins-order-kpaypage {
+    display: none;
+  }
+  .admins-order-adress {
+    display: none;
+  }
+
+  #admins-orderlist-table td {
+    font-size: 11px;
+  }
+  .inputorder-btn {
+    padding: 3px 11px 3px 11px;
+  }
+
+  .admin-productlist-table input {
+    width: 320px;
+  }
+
+  .productlist-title-pageheader {
+    display: none;
+  }
+
+  .productlist-desc-table-row {
+    display: none;
+  }
+
+  #admins-productlist-table td,
+  #admins-productlist-table th {
+    font-size: 12px;
+  }
+
+  .productlist-img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .edit-btn-admin,
+  .del-btn-admin {
+    padding: 3px 11px 3px 11px;
+  }
 }

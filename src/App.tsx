@@ -16,6 +16,7 @@ import OrderList from "./pages/OrderList";
 import ProductList from "./pages/ProductList";
 import EditProduct from "./pages/EditProduct";
 import dotenv from "dotenv";
+import Login from "./pages/Login";
 
 function App() {
   const [language, setLanguage] = useState<boolean>(false);
@@ -115,26 +116,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/add"
-            element={
-              <Addproduct
-                language={language}
-                setLanguage={setLanguage}
-                productData={productData}
-                setAddtocartList={setAddtocartList}
-                addtocartList={addtocartList}
-                addNoti={addNoti}
-                uploadcheck={uploadcheck}
-                setUploadcheck={setUploadcheck}
-                checkerror={checkerror}
-                setCheckerror={setCheckerror}
-                checkimg={checkimg}
-                setCheckimg={setCheckimg}
-                delCheck={delCheck}
-              />
-            }
-          />
+
           <Route
             path="/addtocart"
             element={
@@ -148,60 +130,83 @@ function App() {
               />
             }
           />
-          <Route
-            path="/dashboard"
-            element={
-              <Dashboard
-                uploadcheck={uploadcheck}
-                checkerror={checkerror}
-                checkimg={checkimg}
-                productData={productData}
-                orderData={orderData}
-                delCheck={delCheck}
-              />
-            }
-          />
 
-          <Route
-            path="/orderlist"
-            element={
-              <OrderList
-                uploadcheck={uploadcheck}
-                checkerror={checkerror}
-                checkimg={checkimg}
-                productData={productData}
-                orderData={orderData}
-                delCheck={delCheck}
-              />
-            }
-          />
-          <Route
-            path="/productlist"
-            element={
-              <ProductList
-                uploadcheck={uploadcheck}
-                checkerror={checkerror}
-                checkimg={checkimg}
-                productData={productData}
-                orderData={orderData}
-                delCheck={delCheck}
-                setDelCheck={setDelCheck}
-              />
-            }
-          />
-          <Route
-            path="/editproduct/:id"
-            element={
-              <EditProduct
-                uploadcheck={uploadcheck}
-                checkerror={checkerror}
-                checkimg={checkimg}
-                productData={productData}
-                orderData={orderData}
-                delCheck={delCheck}
-              />
-            }
-          />
+          {/* protected routes start here */}
+          <Route path="/login" element={<Login />}>
+            <Route
+              path="dashboard"
+              element={
+                <Dashboard
+                  uploadcheck={uploadcheck}
+                  checkerror={checkerror}
+                  checkimg={checkimg}
+                  productData={productData}
+                  orderData={orderData}
+                  delCheck={delCheck}
+                />
+              }
+            />
+            <Route
+              path="add"
+              element={
+                <Addproduct
+                  language={language}
+                  setLanguage={setLanguage}
+                  productData={productData}
+                  setAddtocartList={setAddtocartList}
+                  addtocartList={addtocartList}
+                  addNoti={addNoti}
+                  uploadcheck={uploadcheck}
+                  setUploadcheck={setUploadcheck}
+                  checkerror={checkerror}
+                  setCheckerror={setCheckerror}
+                  checkimg={checkimg}
+                  setCheckimg={setCheckimg}
+                  delCheck={delCheck}
+                />
+              }
+            />
+            <Route
+              path="orderlist"
+              element={
+                <OrderList
+                  uploadcheck={uploadcheck}
+                  checkerror={checkerror}
+                  checkimg={checkimg}
+                  productData={productData}
+                  orderData={orderData}
+                  delCheck={delCheck}
+                />
+              }
+            />
+            <Route
+              path="productlist"
+              element={
+                <ProductList
+                  uploadcheck={uploadcheck}
+                  checkerror={checkerror}
+                  checkimg={checkimg}
+                  productData={productData}
+                  orderData={orderData}
+                  delCheck={delCheck}
+                  setDelCheck={setDelCheck}
+                />
+              }
+            />
+            <Route
+              path="editproduct/:id"
+              element={
+                <EditProduct
+                  uploadcheck={uploadcheck}
+                  checkerror={checkerror}
+                  checkimg={checkimg}
+                  productData={productData}
+                  orderData={orderData}
+                  delCheck={delCheck}
+                />
+              }
+            />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

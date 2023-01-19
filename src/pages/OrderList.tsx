@@ -72,11 +72,11 @@ const OrderList = ({
             <tbody>
               <tr>
                 <th>Customer</th>
-                <th>Phone</th>
-                <th>Kpay slip</th>
+                <th className="admins-order-phonepage-title">Phone</th>
+                <th className="admins-order-kpaypage-title">Kpay slip</th>
                 <th>Orders</th>
                 <th>Price</th>
-                <th>Address</th>
+                <th className="admins-order-address-title">Address</th>
                 <th></th>
               </tr>
 
@@ -93,9 +93,9 @@ const OrderList = ({
                     })
                     .map((e: any) => (
                       <tr key={e._id}>
-                        <td style={{ color: "#d85d44" }}>{e.KBZname}</td>
-                        <td style={{ color: "#8d8d8d" }}>0{e.KBZph}</td>
-                        <td style={{ color: "rgb(88, 152, 115)" }}>
+                        <td>{e.KBZname}</td>
+                        <td className="admins-order-phonepage">0{e.KBZph}</td>
+                        <td className="admins-order-kpaypage">
                           {e.KBZpayslip}
                         </td>
                         {e.orderItemName.map((e: any) => (
@@ -110,11 +110,10 @@ const OrderList = ({
                                 display: "flex",
                                 flexDirection: "column",
                                 borderBottom: " none",
-                                color: "rgb(88, 152, 115)",
                               }}
                             >
                               {e.foodname.map((e: any) => (
-                                <span>{e}</span>
+                                <span className="paddingbtn">{e}</span>
                               ))}
                             </td>
                             <td
@@ -122,7 +121,6 @@ const OrderList = ({
                                 display: "flex",
                                 flexDirection: "column",
                                 borderBottom: " none",
-                                color: "rgb(88, 152, 115)",
                               }}
                             >
                               {e.foodcount.map((e: any) => (
@@ -134,7 +132,7 @@ const OrderList = ({
                         <td style={{ color: "#d85d44" }}>
                           {e.totalfoodprice} KS
                         </td>
-                        <td>{e.address}</td>
+                        <td className="admins-order-adress">{e.address}</td>
                         <td>
                           <button
                             className="inputorder-btn"
@@ -147,9 +145,9 @@ const OrderList = ({
                     ))
                 : orderData.map((e: any) => (
                     <tr key={e._id}>
-                      <td style={{ color: "#d85d44" }}>{e.KBZname}</td>
-                      <td style={{ color: "#8d8d8d" }}>0{e.KBZph}</td>
-                      <td style={{ color: "#8d8d8d" }}>{e.KBZpayslip}</td>
+                      <td>{e.KBZname}</td>
+                      <td className="admins-order-phonepage">0{e.KBZph}</td>
+                      <td className="admins-order-kpaypage">{e.KBZpayslip}</td>
                       {e.orderItemName.map((e: any) => (
                         <div
                           style={{
@@ -162,7 +160,6 @@ const OrderList = ({
                               display: "flex",
                               flexDirection: "column",
                               borderBottom: " none",
-                              color: "#8d8d8d",
                             }}
                           >
                             {e.foodname.map((e: any) => (
@@ -174,7 +171,6 @@ const OrderList = ({
                               display: "flex",
                               flexDirection: "column",
                               borderBottom: " none",
-                              color: "#8d8d8d",
                             }}
                           >
                             {e.foodcount.map((e: any) => (
@@ -186,7 +182,7 @@ const OrderList = ({
                       <td style={{ color: "#d85d44" }}>
                         {e.totalfoodprice} KS
                       </td>
-                      <td style={{ color: "#8d8d8d" }}>{e.address}</td>
+                      <td className="admins-order-adress">{e.address}</td>
                       <td>
                         <button
                           className="inputorder-btn"

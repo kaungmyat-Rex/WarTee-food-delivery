@@ -95,7 +95,7 @@ const ProductList = ({
               <tr>
                 <th>Image</th>
                 <th>Food Name</th>
-                <th>Description</th>
+                <th className="productlist-title-pageheader">Description</th>
                 <th>Price</th>
                 <th></th>
               </tr>
@@ -121,7 +121,9 @@ const ProductList = ({
                           />
                         </td>
                         <td>{e.typeFood}</td>
-                        <td>{e.desc.slice(0, 30)}...</td>
+                        <td className="productlist-desc-table-row">
+                          {e.desc.slice(0, 30)}...
+                        </td>
                         <td>{e.price} KS</td>
                         <td>
                           <div className="table-btns">
@@ -141,13 +143,17 @@ const ProductList = ({
                         />
                       </td>
                       <td>{e.typeFood}</td>
-                      <td>{e.desc.slice(0, 30)}...</td>
+                      <td className="productlist-desc-table-row">
+                        {e.desc.slice(0, 30)}...
+                      </td>
                       <td>{e.price} KS</td>
                       <td>
                         <div className="table-btns">
                           <button
                             className="edit-btn-admin"
-                            onClick={() => navigate(`/editproduct/${e._id}`)}
+                            onClick={() =>
+                              navigate(`/login/editproduct/${e._id}`)
+                            }
                           >
                             Edit
                           </button>
