@@ -38,7 +38,7 @@ const OrderList = ({
 
   const deleteorder = async (id: any) => {
     await axios
-      .delete(`https://${process.env.REACT_APP_API_LINK}/admin/delete/${id}`)
+      .delete(`https://outrageous-bikini-toad.cyclic.app/admin/delete/${id}`)
       .then(() => {
         alert("item delete success");
         window.location.reload();

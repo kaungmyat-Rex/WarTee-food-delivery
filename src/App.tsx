@@ -15,7 +15,7 @@ import Dashboard from "./pages/Dashboard";
 import OrderList from "./pages/OrderList";
 import ProductList from "./pages/ProductList";
 import EditProduct from "./pages/EditProduct";
-import dotenv from "dotenv";
+
 import Login from "./pages/Login";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`https://${process.env.REACT_APP_API_LINK}/getmenu`)
+      .get(`https://outrageous-bikini-toad.cyclic.app/getmenu`)
       .then((res) => {
         setLoading(false);
         setProductData(res.data);
@@ -41,7 +41,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`https://${process.env.REACT_APP_API_LINK}/admin/orders`)
+      .get(`https://outrageous-bikini-toad.cyclic.app/admin/orders`)
       .then((res) => setOrderData(res.data));
   }, []);
 

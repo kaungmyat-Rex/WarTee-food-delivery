@@ -58,7 +58,7 @@ const ProductList = ({
     const desertRef = ref(storage, imageLink[0]);
     await deleteObject(desertRef).then(() => {
       axios
-        .delete(`https://${process.env.REACT_APP_API_LINK}/delete/${id}`)
+        .delete(`https://outrageous-bikini-toad.cyclic.app/delete/${id}`)
         .then(() => {
           setDelCheck(true);
           timeout();

@@ -56,7 +56,7 @@ const EditProduct = ({
 
   const editfun = () => {
     axios
-      .patch(`https://${process.env.REACT_APP_API_LINK}/edit/${id}`, {
+      .patch(`https://outrageous-bikini-toad.cyclic.app/edit/${id}`, {
         typeFood: editname,
         price: editprice,
         imageLink: editimage,

@@ -13,7 +13,7 @@ const Login = () => {
 
   const submitFun = async () => {
     await axios
-      .post(`https://${process.env.REACT_APP_API_LINK}/login`, {
+      .post(`https://outrageous-bikini-toad.cyclic.app/login`, {
         username: name,
         password: password,
       })

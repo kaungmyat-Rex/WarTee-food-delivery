@@ -73,7 +73,7 @@ const Addproduct = ({
       await uploadBytes(imgref, imagestore).then(() => {
         getDownloadURL(imgref).then((url) => {
           axios
-            .post(`https://${process.env.REACT_APP_API_LINK}/createmenu`, {
+            .post(`https://outrageous-bikini-toad.cyclic.app/createmenu`, {
               typeFood: name,
               price: price,
               imageLink: url,

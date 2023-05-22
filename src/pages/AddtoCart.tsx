@@ -77,7 +77,7 @@ const AddtoCart = ({
       const foodcount = addtocartList.map((e: any) => e.count);
 
       await axios
-        .post(`https://${process.env.REACT_APP_API_LINK}/admin/crateorder`, {
+        .post(`https://outrageous-bikini-toad.cyclic.app/admin/crateorder`, {
           KBZph: kphone,
           KBZname: kname,
           KBZpayslip: kslip,
