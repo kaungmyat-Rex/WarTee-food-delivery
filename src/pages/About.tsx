@@ -43,13 +43,16 @@ const About = ({
             </h3>
             <div className="about-bar"></div>
             <p className="about-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-              sed odio reprehenderit ut, nobis fuga consequuntur dolorum dolor
-              animi sunt accusamus? Ut eligendi iure magni quos modi inventore
-              ipsam fugit. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Dolorum omnis hic nisi blanditiis, magnam accusamus cum
-              architecto doloribus? Quidem, reiciendis veniam? Voluptatum iure
-              hic suscipit quaerat esse provident cupiditate labore?
+              Welcome to Wartee fast food , we believe that good food should be
+              fast, convenient, and delicious.we have been dedicated to
+              providing our customers with a memorable fast food experience that
+              satisfies their cravings.We take pride in using only the finest,
+              high-quality ingredients in our menu items. Whether you're in the
+              mood for a juicy burger, crispy fries, or a refreshing salad, our
+              diverse menu offers something for everyone.we embrace innovation
+              and constantly seek ways to enhance our customers' experience.
+              Whether you're on the go or enjoying a meal at home, WarTee is
+              here to serve you.
             </p>
           </div>
         </div>
@@ -62,9 +65,12 @@ const About = ({
           <div className="testi-model-one">
             <BsChatRightQuoteFill className="testi-icon" />
             <p className="testi-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-              pariatur quidem blanditiis omnis ducimus sint corrupti doloremque
-              vel veritatis excepturi!
+              Wow, what a fantastic dining experience at WarTee! The food was
+              absolutely delicious, and the service was top-notch. I ordered
+              their signature burger, and it was juicy and flavorful. The fries
+              were perfectly crispy too. The staff was friendly and attentive,
+              making sure we had everything we needed. I highly recommend WarTee
+              for a quick and satisfying meal!
             </p>
             <div className="testi-bar"></div>
 
@@ -74,8 +80,12 @@ const About = ({
           <div className="testi-model-two">
             <BsChatRightQuoteFill className="testi-icon" />
             <p className="testi-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-              pariatur quidem blanditiis omnis ducimus sint corrupti d
+              I can't get enough of WarTee! Their menu has a great variety of
+              options, and everything I've tried so far has been fantastic. The
+              quality of the ingredients really shines through in each dish. The
+              staff is always welcoming and helpful, and the restaurant has a
+              comfortable and clean ambiance. WarTee has become my go-to place
+              for a quick and tasty meal. Highly recommended!
             </p>
             <div className="testi-bar"></div>
 
@@ -86,9 +96,13 @@ const About = ({
           <div className="testi-model-three">
             <BsChatRightQuoteFill className="testi-icon" />
             <p className="testi-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-              pariatur quidem blanditiis omnis ducimus sint corrupti doloremque
-              vel!
+              I had a wonderful experience at WarTee. The food was amazing and
+              served promptly. I loved their vegetarian options, which were
+              flavorful and satisfying. The staff was knowledgeable about
+              dietary restrictions and made excellent recommendations. The
+              restaurant itself had a cozy and modern atmosphere, perfect for a
+              quick meal or catching up with friends. WarTee exceeded my
+              expectations, and I will definitely be returning soon!
             </p>
             <div className="testi-bar"></div>
 

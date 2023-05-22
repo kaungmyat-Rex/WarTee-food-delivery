@@ -1,9 +1,4 @@
-import React from "react";
 import logo from "../img/logo.png";
-
-import wave from "../img/wave.svg";
-import waveBrown from "../img/wave-brown.svg";
-import waveLight from "../img/wave-ligntcoral.svg";
 
 const Footer = () => {
   return (
@@ -34,7 +29,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="copy-right-list">
-          <p>@CopyRight 2022 All Right Reserve</p>
+          <p>@CopyRight 2023 All Right Reserve</p>
         </div>
       </div>
     </div>

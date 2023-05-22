@@ -41,7 +41,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://encouraging-pink-pullover.cyclic.app/admin/orders")
+      .get(`https://${process.env.REACT_APP_API_LINK}/admin/orders`)
       .then((res) => setOrderData(res.data));
   }, []);
 

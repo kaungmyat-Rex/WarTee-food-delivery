@@ -13,7 +13,7 @@ const Login = () => {
 
   const submitFun = async () => {
     await axios
-      .post("http://localhost:3000/login", {
+      .post(`https://${process.env.REACT_APP_API_LINK}/login`, {
         username: name,
         password: password,
       })

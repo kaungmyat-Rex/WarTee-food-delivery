@@ -89,11 +89,7 @@ const Contact = ({
               <ImQuotesLeft className="quote-left" />
 
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id
-                inventore voluptas in eveniet tenetur, iste obcaecati cupiditate
-                ipsam odit numquam tempore veritatis deserunt sint, ut,
-                voluptate neque odio porro? Nesciunt!. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit.
+              Thank you for choosing WarTee as your go-to fast food restaurant. We look forward to serving you and providing a memorable dining experience that keeps you coming back for more.
               </p>
               <ImQuotesRight className="quote-right" />
             </div>

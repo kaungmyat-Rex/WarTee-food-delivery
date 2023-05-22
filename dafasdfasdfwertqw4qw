@@ -1,0 +1,26 @@
+[33m2d81781[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m fix security issue
+[33m0a91646[m ingnore files
+[33m6e92446[m edit favicon
+[33ma048506[m add env for api
+[33m1157d87[m add fooder in orderlist page
+[33m26238f0[m add delete fun in order list page
+[33m695d4d6[m add model in add to cart page
+[33mc5cd595[m Add loading page
+[33m58ce388[m large update
+[33m5ea1a35[m Full page responsive
+[33m5ed7af4[m fix error and some changes
+[33mc989cd6[m add addtocart page
+[33m778e8bc[m add single product info page
+[33m0e2c6f3[m fix some home page search and add filter function to menu page search bar
+[33m6b5e513[m finish menupage and nav search bar
+[33mfb86f92[m Finish contact page
+[33m751c753[m finish about page
+[33mf351566[m start working with menu page
+[33mfa15dc3[m add language info box
+[33m1d34bc8[m add language changing function and myanmar font
+[33me01acd0[m Add footer to the website and design
+[33ma6dd73e[m designing at -why order food- section  and  -how it's work- section
+[33m77d6c7b[m Designing feature  product list
+[33m5903aee[m start working with homepage and add slider
+[33m3b33321[m navigation bar and add css
+[33m69e906c[m Initialize project using Create React App
